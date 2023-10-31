@@ -15,7 +15,6 @@ en: &DEFAULT_EN
     text: 
     button: 關於我們
     buttonlink: "#services"
-    buttonstyle: "background-color:gray ;border:1px solid white"
 
   services:
     title: "Services"
