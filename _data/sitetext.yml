@@ -11,7 +11,8 @@
 # -----------------
 en: &DEFAULT_EN
   header:
-    title: Iimoo Design \n 一暮設計
+    title: Iimoo Design 
+     一暮設計
     text: 
     button: 關於我們
     buttonlink: "#services"
