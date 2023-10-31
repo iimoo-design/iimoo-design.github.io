@@ -18,7 +18,7 @@ url    : "" # the base hostname & protocol for your site, e.g. http://example.co
 baseurl: "/iimoo-design.github.io" # the subpath of your site, e.g. /blog
 
 title      : Iimoo Design 一暮設計
-email      : iimoo.com.tw #this is also the email contact forms will go to
+email      : iimoodesign.web@gmail.com #this is also the email contact forms will go to
 description: "Agency Bootstrap theme converted to a Jekyll theme, plus new features: Google Analytics, Markdown support, custom pages, and more!"
 author     : Alan Cheng
 logo:     #optional, defaults to site title
