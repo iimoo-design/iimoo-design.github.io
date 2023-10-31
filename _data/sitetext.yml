@@ -11,9 +11,9 @@
 # -----------------
 en: &DEFAULT_EN
   header:
-    title: Welcome to our Studio!
-    text: It's Nice To Meet You
-    button: Tell Me More
+    title: Iimoo Design \n 一暮設計
+    text: 
+    button: 關於我們
     buttonlink: "#services"
 
   services:
