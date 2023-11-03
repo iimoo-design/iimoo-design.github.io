@@ -1,0 +1,7 @@
+.popup-window-inner {
+    border: 3px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #8a8585, rgb(157, 152, 152));
+    border-radius: 10px;
+    padding: 1px;
+}

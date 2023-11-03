@@ -25,7 +25,7 @@
   <!-- Custom styles for this theme -->
   <!--<link href="assets/css/agency.min.css" rel="stylesheet">-->
   <link href="assets/css/agency.css" rel="stylesheet">
-  
+  <link href="assets/css/custom-styles.css" rel="stylesheet">
   <!-- Page container change top padding when nav shrinks -->
   
   
@@ -43,6 +43,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
+      <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
+        <a class="nav-link js-scroll-trigger" href="#page-top">Home</a>
+      </li>
       <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
         <a class="nav-link js-scroll-trigger" href="#services">Services</a>
       </li>
@@ -99,6 +102,12 @@
           text.innerHTML = '聯絡我們';
           text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
         }
+        if (text.innerHTML === 'Home') {
+          text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+          var originalSize = parseFloat(text.originalFontSize);
+          text.innerHTML = '首頁';
+          text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+        }
       }
     }
   
@@ -138,6 +147,13 @@
           text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
         }
       }
+      if (element) {
+        var text = element.getElementsByTagName('a')[0];
+        if (text.innerHTML === '首頁') {
+          text.innerHTML = 'Home';
+          text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+        }
+      }
     }
   </script>
 
@@ -151,9 +167,9 @@
 </div>
         <div class="intro-heading text-uppercase"><p></p>
 </div>
-<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services" style="background-color: gray; border: 1px solid white; padding: 10px 20px; font-size: 20px; height: auto;">
+<!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services" style="background-color: gray; border: 1px solid white; padding: 10px 20px; font-size: 20px; height: auto;">
   關於我們
-</a>
+</a> -->
       </div>
     </div>
   </header>
@@ -240,39 +256,41 @@
 <div class="portfolio-modal modal fade" id="s1" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
+      <div class="popup-window-inner">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
         </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">商業空間設計</h2>
-              <p class="item-intro text-muted">服務概述</p>
-              <img class="img-fluid d-block mx-auto" src="./assets/img/services/sample1.jpg" alt="Shirts on a hanger">
-              <p></p><p>輸入你想說的，或是刪掉這段</p>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">商業空間設計</h2>
+                <p class="item-intro text-muted">服務概述</p>
+                <img class="img-fluid d-block mx-auto" src="./assets/img/services/sample1.jpg" alt="Shirts on a hanger">
+                <p></p><p>輸入你想說的，或是刪掉這段</p>
 
-              <div>
-                <h4>收費方式</h4>
-                <ul class="list-inline">
-                  <li style="padding-top: 20px;"><strong>初步諮詢</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>丈量 提案 規劃</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>正式委託</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>售後服務</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                </ul>
-            </div>
+                <div>
+                  <h4>收費方式</h4>
+                  <ul class="list-inline">
+                    <li style="padding-top: 20px;"><strong>初步諮詢</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                    <li style="padding-top: 20px;"><strong>丈量 提案 規劃</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                    <li style="padding-top: 20px;"><strong>正式委託</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                    <li style="padding-top: 20px;"><strong>售後服務</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                  </ul>
+              </div>
 
-<p></p>
-      <button class="btn" data-dismiss="modal" type="button" 
-      style="color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
-      onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
-      onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
-      <i class="fas fa-times"></i>
-        離開
-      </button>
+  <p></p>
+        <button class="btn" data-dismiss="modal" type="button" 
+        style="color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
+        onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
+        onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
+        <i class="fas fa-times"></i>
+          離開
+        </button>
+              </div>
             </div>
           </div>
         </div>
@@ -284,40 +302,40 @@
 <div class="portfolio-modal modal fade" id="s2" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
-        <div class="lr">
-          <div class="rl"></div>
+      <div class="popup-window-inner">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
         </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="modal-body">
-              <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">住宅設計</h2>
-              <p class="item-intro text-muted">服務概述</p>
-              <img class="img-fluid d-block mx-auto" src="./assets/img/services/sample2.jpg" alt="Shirts on a hanger">
-              <p></p><p>輸入你想說的，或是刪掉這段</p>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">住宅設計</h2>
+                <p class="item-intro text-muted">服務概述</p>
+                <img class="img-fluid d-block mx-auto" src="./assets/img/services/sample2.jpg" alt="Shirts on a hanger">
+                <p></p><p>輸入你想說的，或是刪掉這段</p>
 
-              <div>
-                <h4>收費方式</h4>
-                <ul class="list-inline">
-                  <li style="padding-top: 20px;"><strong>初步諮詢</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>丈量 提案 規劃</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>正式委託</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>售後服務</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                </ul>
-            </div>
-<!--s3尚未建立-->
-
-<p></p>
-              <button class="btn" data-dismiss="modal" type="button" 
-              style="color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
-              onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
-              onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
-              <i class="fas fa-times"></i>
-                離開
-              </button>
+                <div>
+                  <h4>收費方式</h4>
+                  <ul class="list-inline">
+                    <li style="padding-top: 20px;"><strong>初步諮詢</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                    <li style="padding-top: 20px;"><strong>丈量 提案 規劃</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                    <li style="padding-top: 20px;"><strong>正式委託</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                    <li style="padding-top: 20px;"><strong>售後服務</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                  </ul>
+              </div>
+  <p></p>
+                <button class="btn" data-dismiss="modal" type="button" 
+                style="color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
+                onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
+                onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
+                <i class="fas fa-times"></i>
+                  離開
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -325,6 +343,10 @@
     </div>
   </div>
 </div>
+
+<!--s3尚未建立-->
+
+
 <!-- End of Services description-->
 
 <!-- Portfolio Grid -->
@@ -403,12 +425,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase"><p>About</p>
-</h2>
+          <h2 class="section-heading text-uppercase"><p>About</p></h2>
           <h3 class="section-subheading text-muted">Iimoo-Design Timeline</h3>
         </div>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-lg-12">
           <ul class="timeline">
 			<li>
@@ -477,7 +498,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
   </section>
 <!-- End About -->
 <!-- Team -->

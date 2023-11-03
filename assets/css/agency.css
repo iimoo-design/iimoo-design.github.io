@@ -289,6 +289,11 @@ header.masthead .intro-text .intro-heading {
 .portfolio-modal .modal-content {
   padding: 100px 0;
   text-align: center;
+  background-color: #ffffff;
+  border: 3px solid #8e8888;
+  border-radius: 10px;
+  padding: 1px;
+  margin: 50px auto;
 }
 .portfolio-modal .modal-content h2 {
   font-size: 3em;
@@ -331,6 +336,7 @@ header.masthead .intro-text .intro-heading {
   width: 1px;
   height: 75px;
   margin-left: 35px;
+  
   /* IE 9 */
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
