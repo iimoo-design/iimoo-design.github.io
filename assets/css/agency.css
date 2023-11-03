@@ -542,7 +542,6 @@ header.masthead .intro-text .intro-heading {
 
 section#contact {
   /* background-color: #e4e6ea; */
-  /* background-image: url("../img/contact.png"); */
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -588,7 +587,6 @@ section#contact :-ms-input-placeholder {
 }
 
 .footer {
-  background-color: ;
   padding: 25px 0;
   text-align: center;
 }
