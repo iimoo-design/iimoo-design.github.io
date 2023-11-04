@@ -55,9 +55,9 @@
 		  <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
         <a class="nav-link js-scroll-trigger" href="#timeline">About</a>
       </li>
-		  <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
+		  <!-- <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
         <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-      </li>
+      </li> -->
 		  <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
         <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
       </li>
@@ -258,11 +258,9 @@
     <div class="modal-content">
       <div class="popup-window-inner">
         <div style="position: relative;">
-          <button class="btn" data-dismiss="modal" type="button" 
-          style="position: absolute; top: 0; right: 0; z-index: 1;
-          color: white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
-          onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
-          onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
+          <button class="btn leave-button" data-dismiss="modal" type="button"
+          onmouseover="this.style.backgroundColor='lightgray';"
+          onmouseout="this.style.backgroundColor='rgb(255, 255, 255, 0)';">
             <i class="fas fa-times"></i>
           </button>
         </div>
@@ -308,11 +306,9 @@
     <div class="modal-content">
       <div class="popup-window-inner">
         <div style="position: relative;">
-          <button class="btn" data-dismiss="modal" type="button" 
-          style="position: absolute; top: 0; right: 0; z-index: 1;
-          color: white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
-          onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
-          onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
+          <button class="btn leave-button" data-dismiss="modal" type="button"
+          onmouseover="this.style.backgroundColor='lightgray';"
+          onmouseout="this.style.backgroundColor='rgb(255, 255, 255, 0)';">
             <i class="fas fa-times"></i>
           </button>
         </div>
@@ -362,9 +358,26 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase"><p>Portfolio</p>
-</h2>
-        <h3 class="section-subheading text-muted"><p>設計類型</p></h3>
+        <h2 class="section-heading text-uppercase"><p>Portfolio</p></h2>
+          <h3 class="section-subheading text-muted">
+            <p>作品集<p>
+            <!-- 作品分類標籤 -->
+            <!-- <div class="container">
+              <nav class="navbar navbar-default">
+                <div style="position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);">
+                  <ul class="nav" style="display: flex; justify-content: center; padding: 0;">
+                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型一</a></li>
+                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型二</a></li>
+                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型三</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div> -->
+            <!-- end of 作品分類標籤 -->
+          </h3>
       </div>
     </div>
     <div class="row">
@@ -393,11 +406,9 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div style="position: relative;">
-        <button class="btn" data-dismiss="modal" type="button" 
-        style="position: absolute; top: 0; right: 0; z-index: 1;
-        color: white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
-        onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
-        onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
+        <button class="btn leave-button" data-dismiss="modal" type="button"
+          onmouseover="this.style.backgroundColor='lightgray';"
+          onmouseout="this.style.backgroundColor='rgb(255, 255, 255, 0)';">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -418,8 +429,11 @@
 </ul>
 
 <p></p>
-              <button class="btn btn-primary" data-dismiss="modal" type="button" style="border-color: aliceblue;">
-                <i class="fas fa-times"></i>
+              <button class="btn" data-dismiss="modal" type="button" 
+              style="color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
+              onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
+              onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
+              <i class="fas fa-times"></i>
                 離開
               </button>
             </div>
@@ -513,7 +527,7 @@
   </section>
 <!-- End About -->
 <!-- Team -->
-<section class="bg-light page-section" id="team">
+<!-- <section class="bg-light page-section" id="team">
 <div class="container">
   <div class="row">
 	<div class="col-lg-12 text-center">
@@ -587,7 +601,7 @@
 	</div>
   </div>
 </div>
-</section>
+</section> -->
 <!-- End Team -->
 <!-- Clients -->
   <!-- <section class="py-5" id=""clients>
@@ -622,7 +636,7 @@
     </div>
   </section> -->
 <!-- Contact -->
-  <section class="page-section" id="contact">
+  <section class="page-section bg-light" id="contact">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
@@ -639,13 +653,13 @@
   </section>
 <!-- End Contact -->
 
-	    <!-- Footer -->
-  <footer class="footer bg-light">
+<!-- Footer -->
+  <footer class="footer">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-4">
           <span class="copyright">Copyright &copy; iimoo Design <br>一暮設計 2023 | TEL：(02)2756-8922 │<br></span>
-          <span class="copyright"><a style="color:black" href="https://maps.app.goo.gl/qFBd4PuFAiCNzP2a8">台北市信義區忠孝東路五段17號11樓之2</a></span>
+          <span class="copyright"><a style="color:black" href="https://maps.app.goo.gl/qFBd4PuFAiCNzP2a8" target="_blank">台北市信義區忠孝東路五段17號11樓之2</a></span>
         </div>
 		<!-- Social Media -->
         <div class="col-md-4">
@@ -669,7 +683,7 @@
         <div class="col-md-4">
           <ul class="list-inline quicklinks">
             <li class="list-inline-item">
-              <a href="legal.html" style="color:gray">Privacy Policy</a><br>
+              <a href="legal.html" style="color:gray" target="_blank">Privacy Policy</a><br>
               <a href="mailto:jhcheng.alan@gmail.com" style="color:gray">Design by Alan Cheng</a>
             </li>
           </ul>
