@@ -9,3 +9,7 @@
     position: absolute; top: 0; right: 0; z-index: 1;
     color: rgb(176, 162, 162); background-color: rgb(255, 255, 255, 0);
 }
+
+.portfolio-container .portfolio-detail{
+    color: black;
+}
