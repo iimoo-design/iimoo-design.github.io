@@ -328,7 +328,7 @@ function back_to_top(){
 }
 
 function show_viewAll_button(n){
-    if(jsonDataArray.length < n){
+    if(jsonDataArray.length <= n){
         document.getElementById('viewAll').style.display = 'none';
     }
 }
