@@ -322,3 +322,8 @@ function showTop3(){
         portfolioContainer.appendChild(modal);
     });
 }
+
+function back_to_top(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
