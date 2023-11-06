@@ -327,3 +327,97 @@ function back_to_top(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+function show_viewAll_button(n){
+    if(jsonDataArray.length < n){
+        document.getElementById('viewAll').style.display = 'none';
+    }
+}
+
+
+function changeToChinese(element) {
+    if (element) {
+      var text = element.getElementsByTagName('a')[0];
+      if (text.innerHTML === 'Services') {
+        text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        var originalSize = parseFloat(text.originalFontSize);
+        text.innerHTML = '服務類型';
+        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+      }
+      if (text.innerHTML === 'Portfolio') {
+        text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        var originalSize = parseFloat(text.originalFontSize);
+        text.innerHTML = '作品集';
+        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+      }
+      if (text.innerHTML === 'About') {
+        text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        var originalSize = parseFloat(text.originalFontSize);
+        text.innerHTML = '關於我們';
+        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+      }
+      if (text.innerHTML === 'Team') {
+        text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        var originalSize = parseFloat(text.originalFontSize);
+        text.innerHTML = '團隊成員';
+        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+      }
+      if (text.innerHTML === 'Contact') {
+        text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        var originalSize = parseFloat(text.originalFontSize);
+        text.innerHTML = '聯絡我們';
+        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+      }
+      if (text.innerHTML === 'Home') {
+        text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        var originalSize = parseFloat(text.originalFontSize);
+        text.innerHTML = '首頁';
+        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+      }
+    }
+  }
+
+function changeToEnglish(element) {
+if (element) {
+    var text = element.getElementsByTagName('a')[0];
+    if (text.innerHTML === '服務類型') {
+    text.innerHTML = 'Services';
+    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+    }
+}
+if (element) {
+    var text = element.getElementsByTagName('a')[0];
+    if (text.innerHTML === '作品集') {
+    text.innerHTML = 'Portfolio';
+    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+    }
+}
+if (element) {
+    var text = element.getElementsByTagName('a')[0];
+    if (text.innerHTML === '關於我們') {
+    text.innerHTML = 'About';
+    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+    }
+}
+if (element) {
+    var text = element.getElementsByTagName('a')[0];
+    if (text.innerHTML === '團隊成員') {
+    text.innerHTML = 'Team';
+    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+    }
+}
+if (element) {
+    var text = element.getElementsByTagName('a')[0];
+    if (text.innerHTML === '聯絡我們') {
+    text.innerHTML = 'Contact';
+    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+    }
+}
+if (element) {
+    var text = element.getElementsByTagName('a')[0];
+    if (text.innerHTML === '首頁') {
+    text.innerHTML = 'Home';
+    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+    }
+}
+}

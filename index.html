@@ -67,96 +67,6 @@
       </div>
     </div>
   </nav>
-
-  <script>
-    function changeToChinese(element) {
-      if (element) {
-        var text = element.getElementsByTagName('a')[0];
-        if (text.innerHTML === 'Services') {
-          text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
-          var originalSize = parseFloat(text.originalFontSize);
-          text.innerHTML = '服務類型';
-          text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        }
-        if (text.innerHTML === 'Portfolio') {
-          text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
-          var originalSize = parseFloat(text.originalFontSize);
-          text.innerHTML = '作品集';
-          text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        }
-        if (text.innerHTML === 'About') {
-          text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
-          var originalSize = parseFloat(text.originalFontSize);
-          text.innerHTML = '關於我們';
-          text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        }
-        if (text.innerHTML === 'Team') {
-          text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
-          var originalSize = parseFloat(text.originalFontSize);
-          text.innerHTML = '團隊成員';
-          text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        }
-        if (text.innerHTML === 'Contact') {
-          text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
-          var originalSize = parseFloat(text.originalFontSize);
-          text.innerHTML = '聯絡我們';
-          text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        }
-        if (text.innerHTML === 'Home') {
-          text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
-          var originalSize = parseFloat(text.originalFontSize);
-          text.innerHTML = '首頁';
-          text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        }
-      }
-    }
-  
-    function changeToEnglish(element) {
-      if (element) {
-        var text = element.getElementsByTagName('a')[0];
-        if (text.innerHTML === '服務類型') {
-          text.innerHTML = 'Services';
-          text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-        }
-      }
-      if (element) {
-        var text = element.getElementsByTagName('a')[0];
-        if (text.innerHTML === '作品集') {
-          text.innerHTML = 'Portfolio';
-          text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-        }
-      }
-      if (element) {
-        var text = element.getElementsByTagName('a')[0];
-        if (text.innerHTML === '關於我們') {
-          text.innerHTML = 'About';
-          text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-        }
-      }
-      if (element) {
-        var text = element.getElementsByTagName('a')[0];
-        if (text.innerHTML === '團隊成員') {
-          text.innerHTML = 'Team';
-          text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-        }
-      }
-      if (element) {
-        var text = element.getElementsByTagName('a')[0];
-        if (text.innerHTML === '聯絡我們') {
-          text.innerHTML = 'Contact';
-          text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-        }
-      }
-      if (element) {
-        var text = element.getElementsByTagName('a')[0];
-        if (text.innerHTML === '首頁') {
-          text.innerHTML = 'Home';
-          text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-        }
-      }
-    }
-  </script>
-
   <!-- End Navigation -->
   
   <!-- Header -->
@@ -395,7 +305,8 @@
             style="background-color: gray;"
             onclick="window.location.href='./portfolio.html'"
             onmouseover="this.style.backgroundColor='lightgray';"
-            onmouseout="this.style.backgroundColor='gray';">
+            onmouseout="this.style.backgroundColor='gray';"
+            id="viewAll">
             <a style="color:white;">VIEW ALL</a>
             </button>
           </p>
@@ -674,7 +585,8 @@
 	  <!-- Custom scripts for this template -->
 	  <script src="assets/js/agency.min.js"></script>
     <script src="./portfolio_description.js"></script>
-    <script src="./assets/js/portfolio_page_display.js"></script>
+    <script src="./assets/js/custom.js"></script>
     <script>showTop3()</script>
+    <script>show_viewAll_button(3)</script>
   </body>
 </html>
