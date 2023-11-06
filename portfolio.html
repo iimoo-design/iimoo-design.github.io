@@ -72,21 +72,43 @@
   <!-- Portfolio Grid -->
 <section class="bg-light page-section" id="portfolio">
     <div class="container">
+
         <div class="row">
             <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase"><p style="margin-top: 5vh;">Interior Design</p></h2>
                 <h3 class="section-subheading text-muted">
-                <p><p>
+                    <p><p>
+                    <div class="row">
+                      <div class="col">
+                        <div class="col">
+                          <a href="#" class="list-group-item portfolio-select_button" onclick="portfolio_filter(4)">all</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <a href="#" class="list-group-item portfolio-select_button" onclick="portfolio_filter(1)">類別1</a>
+                      </div>
+                      <div class="col">
+                        <a href="#" class="list-group-item portfolio-select_button" onclick="portfolio_filter(2)">類別2</a>
+                      </div>
+                      <div class="col">
+                        <a href="#" class="list-group-item portfolio-select_button" onclick="portfolio_filter(3)">類別3</a>
+                      </div>
+                    </div>
                 </h3>
             </div>
         </div>
 
         <div class="row portfolio-container">
-            <!-- 讀入portfolio_page_display.js中的json格式資料建立Grid -->
+            <!-- 讀入custom.js中的json格式資料建立Grid -->
         </div>
         <div class="row">
           <div class="col-lg-12 text-center">
-            <a class="back-to-top btn" style="border-color: rgb(201, 199, 197);" onclick="back_to_top()">Top</a>
+            <a class="back-to-top btn" type="button" 
+            style="color:white; background-color: rgba(117, 108, 108, 0.664); border: 1px solid whitesmoke;"
+            onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
+            onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';" onclick="back_to_top()">Top</a>
           </div>
         </div>
     </div>

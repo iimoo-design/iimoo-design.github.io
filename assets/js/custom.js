@@ -163,8 +163,8 @@ function showAll(){
     });
 }
 
-function showTop3(){
-    jsonDataArray.slice(0,3).forEach((jsonData, index) => {
+function showTopN(n){
+    jsonDataArray.slice(0,n).forEach((jsonData, index) => {
         const col = document.createElement('div');
         col.className = 'col-md-4 col-sm-6 portfolio-item';
 
@@ -212,7 +212,6 @@ function showTop3(){
         const portfolioContainer = document.querySelector('.portfolio-container'); // 假設有一個包含這些區塊的容器元素
         portfolioContainer.appendChild(col);
     });
-
 
     jsonDataArray.forEach((jsonData, index) => {
         const modal = document.createElement('div');
@@ -378,46 +377,113 @@ function changeToChinese(element) {
   }
 
 function changeToEnglish(element) {
-if (element) {
-    var text = element.getElementsByTagName('a')[0];
-    if (text.innerHTML === '服務類型') {
-    text.innerHTML = 'Services';
-    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+  if (element) {
+      var text = element.getElementsByTagName('a')[0];
+      if (text.innerHTML === '服務類型') {
+      text.innerHTML = 'Services';
+      text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      }
+  }
+  if (element) {
+      var text = element.getElementsByTagName('a')[0];
+      if (text.innerHTML === '作品集') {
+      text.innerHTML = 'Portfolio';
+      text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      }
+  }
+  if (element) {
+      var text = element.getElementsByTagName('a')[0];
+      if (text.innerHTML === '關於我們') {
+      text.innerHTML = 'About';
+      text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      }
+  }
+  if (element) {
+      var text = element.getElementsByTagName('a')[0];
+      if (text.innerHTML === '團隊成員') {
+      text.innerHTML = 'Team';
+      text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      }
+  }
+  if (element) {
+      var text = element.getElementsByTagName('a')[0];
+      if (text.innerHTML === '聯絡我們') {
+      text.innerHTML = 'Contact';
+      text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      }
+  }
+  if (element) {
+      var text = element.getElementsByTagName('a')[0];
+      if (text.innerHTML === '首頁') {
+      text.innerHTML = 'Home';
+      text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      }
+  }
+}
+
+function portfolio_filter(catergory){
+  // 先讓所有作品消失
+  var container = document.querySelector('.portfolio-container');
+  var items = container.querySelectorAll('.col-md-4.col-sm-6.portfolio-item');
+  items.forEach(function(item) {
+      item.remove();
+  });
+
+  // 再讓符合條件的作品顯示
+  jsonDataArray.forEach((jsonData, index) =>  {
+    if(catergory == 4){
+      location.reload();
     }
-}
-if (element) {
-    var text = element.getElementsByTagName('a')[0];
-    if (text.innerHTML === '作品集') {
-    text.innerHTML = 'Portfolio';
-    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+    else{
+      if(jsonData.種類 != catergory){
+        return;
+      }
+      const col = document.createElement('div');
+      col.className = 'col-md-4 col-sm-6 portfolio-item';
+
+      const link = document.createElement('a');
+      link.className = 'portfolio-link';
+      link.setAttribute('data-toggle', 'modal');
+      link.setAttribute('href', `#p${index + 1}`);
+
+      const hover = document.createElement('div');
+      hover.className = 'portfolio-hover';
+
+      const hoverContent = document.createElement('div');
+      hoverContent.className = 'portfolio-hover-content';
+
+      const plusIcon = document.createElement('i');
+      plusIcon.className = 'fas fa-plus fa-3x';
+      hoverContent.appendChild(plusIcon);
+      hover.appendChild(hoverContent);
+
+      const image = document.createElement('img');
+      image.className = 'img-fluid';
+      image.setAttribute('src', jsonData.圖片連結);
+      image.setAttribute('alt', '');
+
+      link.appendChild(hover);
+      link.appendChild(image);
+
+      const caption = document.createElement('div');
+      caption.className = 'portfolio-caption';
+
+      const title = document.createElement('h4');
+      title.innerText = jsonData.作品名稱;
+
+      const subtitle = document.createElement('p');
+      subtitle.className = 'text-muted';
+      subtitle.innerText = jsonData.副標題;
+
+      caption.appendChild(title);
+      caption.appendChild(subtitle);
+
+      col.appendChild(link);
+      col.appendChild(caption);
+
+      // 將新建的元素添加到頁面中的適當位置
+      const portfolioContainer = document.querySelector('.portfolio-container'); // 假設有一個包含這些區塊的容器元素
+      portfolioContainer.appendChild(col);
     }
-}
-if (element) {
-    var text = element.getElementsByTagName('a')[0];
-    if (text.innerHTML === '關於我們') {
-    text.innerHTML = 'About';
-    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-    }
-}
-if (element) {
-    var text = element.getElementsByTagName('a')[0];
-    if (text.innerHTML === '團隊成員') {
-    text.innerHTML = 'Team';
-    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-    }
-}
-if (element) {
-    var text = element.getElementsByTagName('a')[0];
-    if (text.innerHTML === '聯絡我們') {
-    text.innerHTML = 'Contact';
-    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-    }
-}
-if (element) {
-    var text = element.getElementsByTagName('a')[0];
-    if (text.innerHTML === '首頁') {
-    text.innerHTML = 'Home';
-    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-    }
-}
-}
+  }
+)}

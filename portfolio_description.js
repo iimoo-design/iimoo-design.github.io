@@ -7,7 +7,7 @@ const description = [
         "描述": "Use this area to describe your project. Markdown supported. This entry (project1.md) uses links for the image sources. All other projects in the portfolio use local images. Both work just fine! Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "日期": "2023.11",
         "客戶": "人瑄1",
-        "種類": "商辦1"
+        "種類": "1"
     },
     {
         "作品名稱": "商業空間2",
@@ -16,9 +16,9 @@ const description = [
         "描述": "Use this area to describe your project. Markdown supported. This entry (project1.md) uses links for the image sources. All other projects in the portfolio use local images. Both work just fine! Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "日期": "2023.12",
         "客戶": "人瑄2",
-        "種類": "商辦2"
+        "種類": "2"
     },
-    // 可以繼續添加更多的 JSON 數據
+    // 可以繼續添加更多的作品資料
     {
         "作品名稱": "商業空間3",
         "副標題": "少即是多，越簡單越能享受純粹3",
@@ -26,7 +26,7 @@ const description = [
         "描述": "Use this area to describe your project. Markdown supported. This entry (project1.md) uses links for the image sources. All other projects in the portfolio use local images. Both work just fine! Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "日期": "2023.13",
         "客戶": "人瑄3",
-        "種類": "商辦3"
+        "種類": "3"
     },
     {
         "作品名稱": "商業空間4",
@@ -35,7 +35,7 @@ const description = [
         "描述": "Use this area to describe your project. Markdown supported. This entry (project1.md) uses links for the image sources. All other projects in the portfolio use local images. Both work just fine! Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         "日期": "2023.14",
         "客戶": "人瑄4",
-        "種類": "商辦4"
+        "種類": "1"
     },
   ];
 
