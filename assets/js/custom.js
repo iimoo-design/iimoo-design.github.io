@@ -337,10 +337,10 @@ function show_viewAll_button(n){
 function changeToChinese(element) {
     if (element) {
       var text = element.getElementsByTagName('a')[0];
-      if (text.innerHTML === 'Services') {
+      if (text.innerHTML === 'Workflow') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         var originalSize = parseFloat(text.originalFontSize);
-        text.innerHTML = '服務類型';
+        text.innerHTML = '工作流程';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
       }
       if (text.innerHTML === 'Portfolio') {
@@ -379,8 +379,8 @@ function changeToChinese(element) {
 function changeToEnglish(element) {
   if (element) {
       var text = element.getElementsByTagName('a')[0];
-      if (text.innerHTML === '服務類型') {
-      text.innerHTML = 'Services';
+      if (text.innerHTML === '工作流程') {
+      text.innerHTML = 'Workflow';
       text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
       }
   }

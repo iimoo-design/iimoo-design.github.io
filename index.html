@@ -44,22 +44,22 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav text-uppercase ml-auto">
       <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
-        <a class="nav-link js-scroll-trigger" href="#page-top">Home</a>
+        <a class="nav-link js-scroll-trigger" href="./index.html#page-top">Home</a>
       </li>
       <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
-        <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+        <a class="nav-link js-scroll-trigger" href="./index.html#timeline">About</a>
       </li>
 		  <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
-        <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+        <a class="nav-link js-scroll-trigger" href="./index.html#portfolio">Portfolio</a>
       </li>
-		  <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
-        <a class="nav-link js-scroll-trigger" href="#timeline">About</a>
+      <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
+        <a class="nav-link js-scroll-trigger" href="./index.html#services">Workflow</a>
       </li>
 		  <!-- <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
         <a class="nav-link js-scroll-trigger" href="#team">Team</a>
       </li> -->
 		  <li class="nav-item" onmouseover="changeToChinese(this)" onmouseout="changeToEnglish(this)">
-        <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+        <a class="nav-link js-scroll-trigger" href="./index.html#contact">Contact</a>
       </li>
 		  
           </li>
@@ -85,245 +85,7 @@
   </header>
   <!-- End Header -->
 
-<!-- Services -->
-  <section class="page-section" id="services">
-    <div class="container">
-	
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Services</h2>
-          
-		  <h3 class="section-subheading text-muted" style="font-size: 20px; font-family: 'Courier New', Courier, monospace;">服務類型</h3>
-		  
-        </div>
-      </div>
-	  
-      <div class="row text-center">
-
-        <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
-          <span class="fa-stack fa-4x" data-toggle="modal" href="#s1">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fas fa-building fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading"><a data-toggle="modal" href="#s1" style="color: black; text-decoration: none;">商空設計</a>
-</h4>
-          <div class="text-muted"><p>(待填入)</p>
-</div>
-        </div>
-	  
-        <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
-          <span class="fa-stack fa-4x" data-toggle="modal" href="#s2">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fas fa-bed fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading"><a data-toggle="modal" href="#s2" style="color: black; text-decoration: none;" >住宅設計</a>
-</h4>
-          <div class="text-muted"><p>(待填入)</p>
-</div>
-        </div>
-	  
-        <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
-          <span class="fa-stack fa-4x" data-toggle="modal" href="#s3">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fas fa-couch fa-stack-1x fa-inverse"></i>
-          </span>
-          <h4 class="service-heading"><a data-toggle="modal" href="#s3" style="color: black; text-decoration: none;" >軟裝美學</a>
-</h4>
-          <div class="text-muted"><p><strong>(待填入)</strong></p>
-</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<script>
-    function enlargeIcon(element) {
-      const iconB = element.getElementsByTagName('i')[0];
-      const iconI = element.getElementsByTagName('i')[1];
-      iconB.style.transform = 'scale(1.1)'; // 根据需要调整大小
-      iconI.style.transform = 'scale(1.1)'; // 根据需要调整大小
-      var text = element.getElementsByTagName('a')[0];
-      text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
-      var originalSize = parseFloat(text.originalFontSize);
-      text.style.fontSize = originalSize * 1.2 + 'px'; // 將字體大小設置為原始大小的1.2倍
-      text.style.color = 'gray'
-    }
-
-    function resetIcon(element) {
-      const iconB = element.getElementsByTagName('i')[0];
-      const iconI = element.getElementsByTagName('i')[1];
-      iconB.style.transform = 'scale(1)'; // 恢复原始大小
-      iconI.style.transform = 'scale(1)'; // 恢复原始大小
-      var text = element.getElementsByTagName('a')[0];
-      text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-      text.style.color = 'black'
-    }
-</script>
-
-
-<!-- End Services -->
-<!-- Services description-->
-<div class="portfolio-modal modal fade" id="s1" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="popup-window-inner">
-        <div style="position: relative;">
-          <button class="btn leave-button" data-dismiss="modal" type="button"
-          onmouseover="this.style.backgroundColor='lightgray';"
-          onmouseout="this.style.backgroundColor='rgb(255, 255, 255, 0)';">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">商業空間設計</h2>
-                <p class="item-intro text-muted">服務概述</p>
-                <img class="img-fluid d-block mx-auto" src="./assets/img/services/sample1.jpg" alt="Shirts on a hanger">
-                <p></p><p>輸入你想說的，或是刪掉這段</p>
-
-                <div>
-                  <h4>收費方式</h4>
-                  <ul class="list-inline">
-                    <li style="padding-top: 20px;"><strong>初步諮詢</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                    <li style="padding-top: 20px;"><strong>丈量 提案 規劃</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                    <li style="padding-top: 20px;"><strong>正式委託</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                    <li style="padding-top: 20px;"><strong>售後服務</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  </ul>
-              </div>
-
-  <p></p>
-        <button class="btn" data-dismiss="modal" type="button" 
-        style="color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
-        onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
-        onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
-        <i class="fas fa-times"></i>
-          離開
-        </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="portfolio-modal modal fade" id="s2" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="popup-window-inner">
-        <div style="position: relative;">
-          <button class="btn leave-button" data-dismiss="modal" type="button"
-          onmouseover="this.style.backgroundColor='lightgray';"
-          onmouseout="this.style.backgroundColor='rgb(255, 255, 255, 0)';">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">住宅設計</h2>
-                <p class="item-intro text-muted">服務概述</p>
-                <img class="img-fluid d-block mx-auto" src="./assets/img/services/sample2.jpg" alt="Shirts on a hanger">
-                <p></p><p>輸入你想說的，或是刪掉這段</p>
-
-                <div>
-                  <h4>收費方式</h4>
-                  <ul class="list-inline">
-                    <li style="padding-top: 20px;"><strong>初步諮詢</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                    <li style="padding-top: 20px;"><strong>丈量 提案 規劃</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                    <li style="padding-top: 20px;"><strong>正式委託</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                    <li style="padding-top: 20px;"><strong>售後服務</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  </ul>
-              </div>
-  <p></p>
-                <button class="btn" data-dismiss="modal" type="button" 
-                style="color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
-                onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
-                onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
-                <i class="fas fa-times"></i>
-                  離開
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--s3尚未建立-->
-
-
-<!-- End of Services description-->
-
-<!-- Portfolio Grid -->
-<section class="bg-light" id="portfolio">
-  <div class="container">
-
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase"><p>Portfolio</p></h2>
-          <h3 class="section-subheading text-muted">
-            <p>作品集<p>
-            <!-- 作品分類標籤 -->
-            <!-- <div class="container">
-              <nav class="navbar navbar-default">
-                <div style="position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);">
-                  <ul class="nav" style="display: flex; justify-content: center; padding: 0;">
-                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型一</a></li>
-                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型二</a></li>
-                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型三</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div> -->
-            <!-- end of 作品分類標籤 -->
-          </h3>
-      </div>
-    </div>
-    
-      <div class="row portfolio-container">
-        <!-- 讀入portfolio_page_display.js中的json格式資料建立Grid -->
-      </div>
-
-    <!-- 看所有作品的連結按鈕 -->
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">
-          <p>
-            <button class="btn"
-            style="background-color: gray;"
-            onclick="window.location.href='./portfolio.html'"
-            onmouseover="this.style.backgroundColor='lightgray';"
-            onmouseout="this.style.backgroundColor='gray';"
-            id="viewAll">
-            <a style="color:white;">VIEW ALL</a>
-            </button>
-          </p>
-        </h2>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Portfolio Modals -->
-<div class="portfolio-detail">
-  <!-- 讀入portfolio_page_display.js中的json格式資料建立Grid -->
-</div>
-
-
-<!-- About -->
+  <!-- About -->
   <section class="page-section" id="timeline">
     <div class="container">
       <div class="row">
@@ -342,8 +104,7 @@
               </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
-                  <h4><p>2023</p>
-</h4>
+                  <h4><p>2023</p></h4>
                   <h4 class="subheading">幾位年輕設計師成立<br>「一暮設計」</h4>
                 </div>
                 <div class="timeline-body">
@@ -513,6 +274,243 @@
       </div>
     </div>
   </section> -->
+
+<!-- Portfolio Grid -->
+<section class="bg-light" id="portfolio">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase"><p>Portfolio</p></h2>
+          <h3 class="section-subheading text-muted">
+            <p>作品集<p>
+            <!-- 作品分類標籤 -->
+            <!-- <div class="container">
+              <nav class="navbar navbar-default">
+                <div style="position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);">
+                  <ul class="nav" style="display: flex; justify-content: center; padding: 0;">
+                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型一</a></li>
+                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型二</a></li>
+                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型三</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div> -->
+            <!-- end of 作品分類標籤 -->
+          </h3>
+      </div>
+    </div>
+    
+      <div class="row portfolio-container">
+        <!-- 讀入portfolio_page_display.js中的json格式資料建立Grid -->
+      </div>
+
+    <!-- 看所有作品的連結按鈕 -->
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">
+          <p>
+            <button class="btn"
+            style="background-color: gray;"
+            onclick="window.location.href='./portfolio.html'"
+            onmouseover="this.style.backgroundColor='lightgray';"
+            onmouseout="this.style.backgroundColor='gray';"
+            id="viewAll">
+            <a style="color:white;">VIEW ALL</a>
+            </button>
+          </p>
+        </h2>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End of Portfolio Grid -->
+
+<!-- Portfolio Modals -->
+<div class="portfolio-detail">
+  <!-- 讀入portfolio_page_display.js中的json格式資料建立Grid -->
+</div>
+<!-- End of Portfolio Modals -->
+
+<!-- Workflow -->
+<section class="page-section" id="services">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Services</h2>
+        
+    <h3 class="section-subheading text-muted" style="font-size: 20px; font-family: 'Courier New', Courier, monospace;">服務類型</h3>
+    
+      </div>
+    </div>
+  
+    <div class="row text-center">
+
+      <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
+        <span class="fa-stack fa-4x" data-toggle="modal" href="#s1">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="fas fa-building fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading"><a data-toggle="modal" href="#s1" style="color: black; text-decoration: none;">商空設計</a>
+</h4>
+        <div class="text-muted"><p>(待填入)</p>
+</div>
+      </div>
+  
+      <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
+        <span class="fa-stack fa-4x" data-toggle="modal" href="#s2">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="fas fa-bed fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading"><a data-toggle="modal" href="#s2" style="color: black; text-decoration: none;" >住宅設計</a>
+</h4>
+        <div class="text-muted"><p>(待填入)</p>
+</div>
+      </div>
+  
+      <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
+        <span class="fa-stack fa-4x" data-toggle="modal" href="#s3">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="fas fa-couch fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading"><a data-toggle="modal" href="#s3" style="color: black; text-decoration: none;" >軟裝美學</a>
+</h4>
+        <div class="text-muted"><p><strong>(待填入)</strong></p>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function enlargeIcon(element) {
+    const iconB = element.getElementsByTagName('i')[0];
+    const iconI = element.getElementsByTagName('i')[1];
+    iconB.style.transform = 'scale(1.1)'; // 根据需要调整大小
+    iconI.style.transform = 'scale(1.1)'; // 根据需要调整大小
+    var text = element.getElementsByTagName('a')[0];
+    text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+    var originalSize = parseFloat(text.originalFontSize);
+    text.style.fontSize = originalSize * 1.2 + 'px'; // 將字體大小設置為原始大小的1.2倍
+    text.style.color = 'gray'
+  }
+
+  function resetIcon(element) {
+    const iconB = element.getElementsByTagName('i')[0];
+    const iconI = element.getElementsByTagName('i')[1];
+    iconB.style.transform = 'scale(1)'; // 恢复原始大小
+    iconI.style.transform = 'scale(1)'; // 恢复原始大小
+    var text = element.getElementsByTagName('a')[0];
+    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+    text.style.color = 'black'
+  }
+</script>
+
+
+<!-- End Workflow -->
+<!-- Workflow description-->
+<div class="portfolio-modal modal fade" id="s1" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="popup-window-inner">
+      <div style="position: relative;">
+        <button class="btn leave-button" data-dismiss="modal" type="button"
+        onmouseover="this.style.backgroundColor='lightgray';"
+        onmouseout="this.style.backgroundColor='rgb(255, 255, 255, 0)';">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">商業空間設計</h2>
+              <p class="item-intro text-muted">服務概述</p>
+              <img class="img-fluid d-block mx-auto" src="./assets/img/services/sample1.jpg" alt="Shirts on a hanger">
+              <p></p><p>輸入你想說的，或是刪掉這段</p>
+
+              <div>
+                <h4>收費方式</h4>
+                <ul class="list-inline">
+                  <li style="padding-top: 20px;"><strong>初步諮詢</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                  <li style="padding-top: 20px;"><strong>丈量 提案 規劃</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                  <li style="padding-top: 20px;"><strong>正式委託</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                  <li style="padding-top: 20px;"><strong>售後服務</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                </ul>
+            </div>
+
+<p></p>
+      <button class="btn" data-dismiss="modal" type="button" 
+      style="color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
+      onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
+      onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
+      <i class="fas fa-times"></i>
+        離開
+      </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="portfolio-modal modal fade" id="s2" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="popup-window-inner">
+      <div style="position: relative;">
+        <button class="btn leave-button" data-dismiss="modal" type="button"
+        onmouseover="this.style.backgroundColor='lightgray';"
+        onmouseout="this.style.backgroundColor='rgb(255, 255, 255, 0)';">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="modal-body">
+              <!-- Project Details Go Here -->
+              <h2 class="text-uppercase">住宅設計</h2>
+              <p class="item-intro text-muted">服務概述</p>
+              <img class="img-fluid d-block mx-auto" src="./assets/img/services/sample2.jpg" alt="Shirts on a hanger">
+              <p></p><p>輸入你想說的，或是刪掉這段</p>
+
+              <div>
+                <h4>收費方式</h4>
+                <ul class="list-inline">
+                  <li style="padding-top: 20px;"><strong>初步諮詢</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                  <li style="padding-top: 20px;"><strong>丈量 提案 規劃</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                  <li style="padding-top: 20px;"><strong>正式委託</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                  <li style="padding-top: 20px;"><strong>售後服務</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                </ul>
+            </div>
+<p></p>
+              <button class="btn" data-dismiss="modal" type="button" 
+              style="color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"
+              onmouseover="this.style.backgroundColor='lightgray'; this.style.borderColor='white';"
+              onmouseout="this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';">
+              <i class="fas fa-times"></i>
+                離開
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- End of Workflow description-->
+
+
 <!-- Contact -->
   <section class="page-section bg-light" id="contact">
     <div class="container">
