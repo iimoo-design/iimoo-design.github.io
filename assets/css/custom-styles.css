@@ -21,3 +21,8 @@
     text-align: center;
     border: none;
 }
+
+.about-pre{
+    white-space: pre-wrap; /* 保留空白和换行符 */
+    font-family: Arial, sans-serif;
+}
