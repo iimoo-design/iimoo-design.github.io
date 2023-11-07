@@ -431,7 +431,7 @@ function portfolio_filter(catergory){
 
   // 再讓符合條件的作品顯示
   jsonDataArray.forEach((jsonData, index) =>  {
-    if(catergory == 4){
+    if(catergory == 'all'){
       location.reload();
     }
     else{
