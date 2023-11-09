@@ -23,198 +23,14 @@ function splitTextWithPunctuation(text) {
   return result;
 }
 
-
-
-function showAll(){
-    jsonDataArray.forEach((jsonData, index) => {
-        const col = document.createElement('div');
-        col.className = 'col-md-4 col-sm-6 portfolio-item';
-
-        const link = document.createElement('a');
-        link.className = 'portfolio-link';
-        link.setAttribute('data-toggle', 'modal');
-        link.setAttribute('href', `#p${index + 1}`);
-
-        const hover = document.createElement('div');
-        hover.className = 'portfolio-hover';
-
-        const hoverContent = document.createElement('div');
-        hoverContent.className = 'portfolio-hover-content';
-
-        const plusIcon = document.createElement('i');
-        plusIcon.className = 'fas fa-plus fa-3x';
-        hoverContent.appendChild(plusIcon);
-        hover.appendChild(hoverContent);
-
-        const image = document.createElement('img');
-        image.className = 'img-fluid';
-        image.setAttribute('src', jsonData.圖片連結 + `1.jpg`);
-        image.setAttribute('alt', '');
-
-        link.appendChild(hover);
-        link.appendChild(image);
-
-        const caption = document.createElement('div');
-        caption.className = 'portfolio-caption';
-
-        const title = document.createElement('h4');
-        title.innerText = jsonData.專案名;
-
-        caption.appendChild(title);
-
-        col.appendChild(link);
-        col.appendChild(caption);
-
-        // 將新建的元素添加到頁面中的適當位置
-        const portfolioContainer = document.querySelector('.portfolio-container'); // 假設有一個包含這些區塊的容器元素
-        portfolioContainer.appendChild(col);
-    });
-
-    jsonDataArray.forEach((jsonData, index) => {
-        const image_item = [];
-        for(let i = 0; i <=6 ; i++){
-          const image = document.createElement('img');
-          image.className = 'img-fluid d-block mx-auto';
-          image.setAttribute('src', jsonData.圖片連結 + `${i}.jpg`);
-          image.onerror = function(){
-            image.remove();
-          }
-          image_item.push(image);
-          console.log(image);
-        }
-
-        const modal = document.createElement('div');
-        modal.className = 'portfolio-modal modal fade';
-        modal.id = (`p${index + 1}`);
-        modal.tabIndex = '-1';
-        modal.role = 'dialog';
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden', 'true');
-
-        const modalDialog = document.createElement('div');
-        modalDialog.className = 'modal-dialog';
-
-        const modalContent = document.createElement('div');
-        modalContent.className = 'modal-content';
-
-        const closeButtonContainer = document.createElement('div');
-        closeButtonContainer.style.position = 'relative';
-
-        const closeButton = document.createElement('button');
-        closeButton.className = 'btn leave-button';
-        closeButton.setAttribute('data-dismiss', 'modal');
-        closeButton.setAttribute('type', 'button');
-        closeButton.setAttribute('onmouseover', "this.style.backgroundColor='lightgray';");
-        closeButton.setAttribute('onmouseout', "this.style.backgroundColor='rgb(255, 255, 255, 0)';");
-
-        const closeIcon = document.createElement('i');
-        closeIcon.className = 'fas fa-times';
-        closeButton.appendChild(closeIcon);
-        closeButtonContainer.appendChild(closeButton);
-
-        const container = document.createElement('div');
-        container.className = 'container';
-
-        const row = document.createElement('div');
-        row.className = 'row';
-
-        const col = document.createElement('div');
-        col.className = 'col-lg-8 mx-auto';
-
-        const modalBody = document.createElement('div');
-        modalBody.className = 'modal-body';
-
-        // const title = document.createElement('h2');
-        // title.className = 'text-uppercase';
-        // title.innerText = jsonData.副標題;
-
-        // const subtitle = document.createElement('p');
-        // subtitle.className = 'item-intro text-muted';
-        // subtitle.innerText = jsonData.副標題;
-
-        
-        const description = document.createElement('p');
-        description.innerText = splitTextWithPunctuation(jsonData.描述);
-
-        const desDiv = document.createElement('div');
-        desDiv.appendChild(description);
-        desDiv.style.textAlign = 'left';
-        desDiv.style.flex = '0 0 80%';
-
-        const ulDiv = document.createElement('div');
-        ulDiv.style.flex = '0 0 auto';
-
-        const ul = document.createElement('ul');
-        ul.className = 'list-inline';
-        ul.style.paddingLeft = 'text-align: left;';
-        ul.style.float = 'right';
-
-        const locateLi = document.createElement('li');
-        locateLi.innerText = `區域： ${jsonData.區域}`;
-
-        const dateLi = document.createElement('li');
-        dateLi.innerText = `年份： ${jsonData.日期}`;
-
-        const sizeLi = document.createElement('li');
-        sizeLi.innerText = `坪數： ${jsonData.坪數}坪`;
-
-        const projectNameLi = document.createElement('li');
-        projectNameLi.innerText = `專案名： ${jsonData.專案名}`;
-
-        ul.appendChild(locateLi);
-        ul.appendChild(dateLi);
-        ul.appendChild(sizeLi);
-        ul.appendChild(projectNameLi);
-
-        const div = document.createElement('div');
-        div.className = 'row';
-        div.style.display = 'flex';
-        div.style.flexWrap = 'wrap';
-        
-
-        div.appendChild(desDiv);
-        div.appendChild(ul);
-
-        const leaveButton = document.createElement('button');
-        leaveButton.className = 'btn';
-        leaveButton.setAttribute('data-dismiss', 'modal');
-        leaveButton.setAttribute('type', 'button');
-        leaveButton.setAttribute('style', 'color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;');
-        leaveButton.setAttribute('onmouseover', "this.style.backgroundColor='lightgray'; this.style.borderColor='white';");
-        leaveButton.setAttribute('onmouseout', "this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';");
-
-        const leaveIcon = document.createElement('i');
-        leaveIcon.className = 'fas fa-times';
-        leaveButton.appendChild(leaveIcon);
-        leaveButton.appendChild(document.createTextNode('離開'));
-
-        // modalBody.appendChild(title);
-        // modalBody.appendChild(subtitle);
-        modalBody.appendChild(image_item[0]);
-        modalBody.appendChild(div);
-        for(let j = 1; j <= 6; j++){
-          if(image_item[j] != null)
-            modalBody.appendChild(image_item[j]);
-        }
-        
-        modalBody.appendChild(document.createElement('p'));
-        modalBody.appendChild(leaveButton);
-
-        col.appendChild(modalBody);
-        row.appendChild(col);
-        container.appendChild(row);
-        modalContent.appendChild(closeButtonContainer);
-        modalContent.appendChild(container);
-        modalDialog.appendChild(modalContent);
-        modal.appendChild(modalDialog);
-
-        // 將新建的元素添加到頁面中的適當位置
-        const portfolioContainer = document.querySelector('.portfolio-detail'); // 假設有一個包含這些區塊的容器元素
-        portfolioContainer.appendChild(modal);
-    });
-}
-
-function showTopN(n){
+function show_N_wrok(N){
+    var n = 0;
+    if(N == 'all'){
+      n = jsonDataArray.length;
+    }
+    else{
+      n = N;
+    }
     jsonDataArray.slice(0,n).forEach((jsonData, index) => {
       const col = document.createElement('div');
       col.className = 'col-md-4 col-sm-6 portfolio-item';
@@ -325,17 +141,12 @@ function showTopN(n){
         description.innerText = splitTextWithPunctuation(jsonData.描述);
 
         const desDiv = document.createElement('div');
+        desDiv.className = 'lchild'
         desDiv.appendChild(description);
-        desDiv.style.textAlign = 'left';
-        desDiv.style.flex = '0 0 80%';
-
-        const ulDiv = document.createElement('div');
-        ulDiv.style.flex = '0 0 auto';
-
+        
         const ul = document.createElement('ul');
         ul.className = 'list-inline';
-        ul.style.paddingLeft = 'text-align: left;';
-        ul.style.float = 'right';
+        ul.style.textAlign = 'left;';
 
         const locateLi = document.createElement('li');
         locateLi.innerText = `區域： ${jsonData.區域}`;
@@ -354,14 +165,15 @@ function showTopN(n){
         ul.appendChild(sizeLi);
         ul.appendChild(projectNameLi);
 
+        const ulDiv = document.createElement('div');
+        ulDiv.className = 'rchild'
+        ulDiv.appendChild(ul);
+
         const div = document.createElement('div');
-        div.className = 'row';
-        div.style.display = 'flex';
-        div.style.flexWrap = 'wrap';
-        
+        div.className = 'parent'
 
         div.appendChild(desDiv);
-        div.appendChild(ul);
+        div.appendChild(ulDiv);
 
         const leaveButton = document.createElement('button');
         leaveButton.className = 'btn';

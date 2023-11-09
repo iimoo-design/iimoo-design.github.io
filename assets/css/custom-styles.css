@@ -26,3 +26,26 @@
     white-space: pre-wrap; /* 保留空白和换行符 */
     font-family: Arial, sans-serif;
 }
+
+.parent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .lchild {
+    width: 70%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  
+  .rchild {
+    width: 150px;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  @media (max-width: 768px) {
+    .lchild {
+      width: 100%;
+    }
+  }
