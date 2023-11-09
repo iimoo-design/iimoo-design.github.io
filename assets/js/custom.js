@@ -60,12 +60,7 @@ function showAll(){
         const title = document.createElement('h4');
         title.innerText = jsonData.專案名;
 
-        const subtitle = document.createElement('p');
-        subtitle.className = 'text-muted';
-        subtitle.innerText = jsonData.副標題;
-
         caption.appendChild(title);
-        caption.appendChild(subtitle);
 
         col.appendChild(link);
         col.appendChild(caption);
@@ -136,12 +131,31 @@ function showAll(){
         // const subtitle = document.createElement('p');
         // subtitle.className = 'item-intro text-muted';
         // subtitle.innerText = jsonData.副標題;
+
+        
         
         const description = document.createElement('p');
         description.innerText = splitTextWithPunctuation(jsonData.描述);
 
+        const desDiv = document.createElement('div');
+        desDiv.appendChild(description);
+        desDiv.style.width = "80%";
+
+        const padding = document.createElement('div');
+        padding.style.width = "20%";
+
+        const tDiv = document.createElement('div');
+        tDiv.style.textAlign = 'left';
+        tDiv.style.display = 'flex';
+        tDiv.style.width = '80%'
+      
+        tDiv.appendChild(desDiv);
+        tDiv.appendChild(padding);
+
         const ul = document.createElement('ul');
         ul.className = 'list-inline';
+        ul.style.paddingLeft = 'text-align: left;';
+        ul.style.float = 'right';
 
         const locateLi = document.createElement('li');
         locateLi.innerText = `區域： ${jsonData.區域}`;
@@ -160,6 +174,15 @@ function showAll(){
         ul.appendChild(sizeLi);
         ul.appendChild(projectNameLi);
 
+        const div = document.createElement('div');
+        div.className = 'row';
+        div.style.textAlign = 'left';
+        div.style.lineHeight = '2';
+        div.style.display = 'flex';
+
+        div.appendChild(tDiv);
+        div.appendChild(ul);
+
         const leaveButton = document.createElement('button');
         leaveButton.className = 'btn';
         leaveButton.setAttribute('data-dismiss', 'modal');
@@ -176,8 +199,7 @@ function showAll(){
         // modalBody.appendChild(title);
         // modalBody.appendChild(subtitle);
         modalBody.appendChild(image_item[0]);
-        modalBody.appendChild(ul);
-        modalBody.appendChild(description);
+        modalBody.appendChild(div);
         for(let j = 1; j <= 6; j++){
           if(image_item[j] != null)
             modalBody.appendChild(image_item[j]);
@@ -235,12 +257,7 @@ function showTopN(n){
       const title = document.createElement('h4');
       title.innerText = jsonData.專案名;
 
-      const subtitle = document.createElement('p');
-      subtitle.className = 'text-muted';
-      subtitle.innerText = jsonData.副標題;
-
       caption.appendChild(title);
-      caption.appendChild(subtitle);
 
       col.appendChild(link);
       col.appendChild(caption);
@@ -395,36 +412,42 @@ function changeToChinese(element) {
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '服務流程';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+        text.style.fontFamily = 'Courier New';
       }
       if (text.innerHTML === 'Portfolio') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '作品集';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+        text.style.fontFamily = 'Courier New';
       }
       if (text.innerHTML === 'About') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '關於我們';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+        text.style.fontFamily = 'Courier New';
       }
       if (text.innerHTML === 'Team') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '團隊成員';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+        text.style.fontFamily = 'Courier New';
       }
       if (text.innerHTML === 'Contact') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '聯絡我們';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+        text.style.fontFamily = 'Courier New';
       }
       if (text.innerHTML === 'Home') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '首頁';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
+        text.style.fontFamily = 'Courier New';
       }
     }
   }
@@ -435,6 +458,7 @@ function changeToEnglish(element) {
       if (text.innerHTML === '服務流程') {
       text.innerHTML = 'Workflow';
       text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      text.style.fontFamily = text.originalFontFamily//恢復原本的字體
       }
   }
   if (element) {
@@ -442,6 +466,7 @@ function changeToEnglish(element) {
       if (text.innerHTML === '作品集') {
       text.innerHTML = 'Portfolio';
       text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      text.style.fontFamily = text.originalFontFamily//恢復原本的字體
       }
   }
   if (element) {
@@ -449,6 +474,7 @@ function changeToEnglish(element) {
       if (text.innerHTML === '關於我們') {
       text.innerHTML = 'About';
       text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      text.style.fontFamily = text.originalFontFamily//恢復原本的字體
       }
   }
   if (element) {
@@ -456,6 +482,7 @@ function changeToEnglish(element) {
       if (text.innerHTML === '團隊成員') {
       text.innerHTML = 'Team';
       text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      text.style.fontFamily = text.originalFontFamily//恢復原本的字體
       }
   }
   if (element) {
@@ -463,6 +490,7 @@ function changeToEnglish(element) {
       if (text.innerHTML === '聯絡我們') {
       text.innerHTML = 'Contact';
       text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      text.style.fontFamily = text.originalFontFamily//恢復原本的字體
       }
   }
   if (element) {
@@ -470,6 +498,7 @@ function changeToEnglish(element) {
       if (text.innerHTML === '首頁') {
       text.innerHTML = 'Home';
       text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+      text.style.fontFamily = text.originalFontFamily//恢復原本的字體
       }
   }
 }
@@ -524,12 +553,7 @@ function portfolio_filter(catergory){
       const title = document.createElement('h4');
       title.innerText = jsonData.專案名;
 
-      const subtitle = document.createElement('p');
-      subtitle.className = 'text-muted';
-      subtitle.innerText = jsonData.副標題;
-
       caption.appendChild(title);
-      caption.appendChild(subtitle);
 
       col.appendChild(link);
       col.appendChild(caption);
