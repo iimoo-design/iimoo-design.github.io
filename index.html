@@ -324,24 +324,7 @@
       <div class="col-lg-12 text-center">
         <h2 class="section-heading text-uppercase"><p>Portfolio</p></h2>
         <h3 class="section-subheading text-muted" style="font-size: 20px; font-family: 'Courier New', Courier, monospace;">作品集</h3>
-          <h3 class="section-subheading text-muted">
-            <!-- 作品分類標籤 -->
-            <!-- <div class="container">
-              <nav class="navbar navbar-default">
-                <div style="position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);">
-                  <ul class="nav" style="display: flex; justify-content: center; padding: 0;">
-                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型一</a></li>
-                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型二</a></li>
-                    <li style="margin: 0 10px;"><a href="#" style="color:black">類型三</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div> -->
-            <!-- end of 作品分類標籤 -->
-          </h3>
+        <br>
       </div>
     </div>
     
@@ -384,78 +367,49 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading text-uppercase">Workflow</h2>
-        
-    <h3 class="section-subheading text-muted" style="font-size: 20px; font-family: 'Courier New', Courier, monospace;">服務流程</h3>
-    
+           <h3 class="section-subheading text-muted" style="font-size: 20px; font-family: 'Courier New', Courier, monospace;">服務流程</h3>
       </div>
     </div>
   
-    <div class="row text-center">
-
-      <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
-        <span class="fa-stack fa-4x" data-toggle="modal" href="#s1">
-          <i class="fas fa-circle fa-stack-2x"></i>
-          <i class="fas fa-building fa-stack-1x fa-inverse"></i>
-        </span>
-        <h4 class="service-heading"><a data-toggle="modal" href="#s1" style="color: black; text-decoration: none;">商空設計</a>
-</h4>
-        <div class="text-muted"><p>(待填入)</p>
-</div>
-      </div>
+    <div class="row justify-content-center text-center">
+        <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
+          <h4 class="service-heading">
+            <a data-toggle="modal" href="#wf1" style="color: black; text-decoration: none;"><br>客戶變更</a>
+          </h4>
+          <div class="text-muted">
+            <p>(無圖片建議填入簡易說明)</p>
+          </div>
+        </div>
   
-      <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
-        <span class="fa-stack fa-4x" data-toggle="modal" href="#s2">
-          <i class="fas fa-circle fa-stack-2x"></i>
-          <i class="fas fa-bed fa-stack-1x fa-inverse"></i>
-        </span>
-        <h4 class="service-heading"><a data-toggle="modal" href="#s2" style="color: black; text-decoration: none;" >住宅設計</a>
-</h4>
-        <div class="text-muted"><p>(待填入)</p>
-</div>
-      </div>
+        <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
+          <h4 class="service-heading">
+            <a data-toggle="modal" href="#wf2" style="color: black; text-decoration: none;" >新成屋 / 老屋舊翻新<br>商業空間設計</a>
+          </h4>
+          <div class="text-muted">
+            <p>(無圖片建議填入簡易說明)</p>
+          </div>
+        </div>
   
-      <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
+      <!-- <div class="col-md-4" onmouseover="enlargeIcon(this)" onmouseout="resetIcon(this)">
         <span class="fa-stack fa-4x" data-toggle="modal" href="#s3">
           <i class="fas fa-circle fa-stack-2x"></i>
           <i class="fas fa-couch fa-stack-1x fa-inverse"></i>
         </span>
-        <h4 class="service-heading"><a data-toggle="modal" href="#s3" style="color: black; text-decoration: none;" >軟裝美學</a>
-</h4>
-        <div class="text-muted"><p><strong>(待填入)</strong></p>
-</div>
-      </div>
+        <h4 class="service-heading">
+          <a data-toggle="modal" href="#s3" style="color: black; text-decoration: none;" >軟裝美學</a>
+        </h4>
+        <div class="text-muted">
+          <p><strong>(待填入)</strong></p>
+        </div>
+      </div> -->
     </div>
   </div>
 </section>
 
-<script>
-  function enlargeIcon(element) {
-    const iconB = element.getElementsByTagName('i')[0];
-    const iconI = element.getElementsByTagName('i')[1];
-    iconB.style.transform = 'scale(1.1)'; // 根据需要调整大小
-    iconI.style.transform = 'scale(1.1)'; // 根据需要调整大小
-    var text = element.getElementsByTagName('a')[0];
-    text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
-    var originalSize = parseFloat(text.originalFontSize);
-    text.style.fontSize = originalSize * 1.2 + 'px'; // 將字體大小設置為原始大小的1.2倍
-    text.style.color = 'gray'
-  }
-
-  function resetIcon(element) {
-    const iconB = element.getElementsByTagName('i')[0];
-    const iconI = element.getElementsByTagName('i')[1];
-    iconB.style.transform = 'scale(1)'; // 恢复原始大小
-    iconI.style.transform = 'scale(1)'; // 恢复原始大小
-    var text = element.getElementsByTagName('a')[0];
-    text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
-    text.style.color = 'black'
-  }
-</script>
-
 
 <!-- End Workflow -->
 <!-- Workflow description-->
-<div class="portfolio-modal modal fade" id="s1" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="wf1" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="popup-window-inner">
@@ -471,18 +425,21 @@
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">商業空間設計</h2>
-              <p class="item-intro text-muted">服務概述</p>
+              <h2 class="text-uppercase">客戶變更</h2>
               <img class="img-fluid d-block mx-auto" src="./assets/img/services/sample1.jpg" alt="Shirts on a hanger">
-              <p></p><p>輸入你想說的，或是刪掉這段</p>
+              <p>(可有圖片簡易說明)</p>
 
               <div>
-                <h4>收費方式</h4>
-                <ul class="list-inline">
-                  <li style="padding-top: 20px;"><strong>初步諮詢</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>丈量 提案 規劃</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>正式委託</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>售後服務</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                <h5>工作流程</h5>
+                <ul class="list-inline" style="font-size: large;">
+                  <li style="padding-top: 20px; text-align: left;"><strong>1. 設計師與客戶接洽，提供免費諮詢服務
+                  </strong></li>
+                  <li style="padding-top: 20px; text-align: left;"><strong>2. 簽定設計約後，設計師依據客戶求提供平面配置圖
+                  </strong></li>
+                  <li style="padding-top: 20px; text-align: left;"><strong>3. 配置圖定案後，設計師會依據建商提供圖面，繪製機電圖、給排水配置圖
+                  </strong></li>
+                  <li style="padding-top: 20px; text-align: left;"><strong>4. 完成上述所有客變設計圖後，更陪同協助與建商選材
+                  </strong></li>
                 </ul>
             </div>
 
@@ -503,7 +460,7 @@
 </div>
 </div>
 
-<div class="portfolio-modal modal fade" id="s2" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="wf2" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="popup-window-inner">
@@ -519,20 +476,33 @@
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
               <!-- Project Details Go Here -->
-              <h2 class="text-uppercase">住宅設計</h2>
-              <p class="item-intro text-muted">服務概述</p>
-              <img class="img-fluid d-block mx-auto" src="./assets/img/services/sample2.jpg" alt="Shirts on a hanger">
-              <p></p><p>輸入你想說的，或是刪掉這段</p>
+              <h2 class="text-uppercase">新成屋/老屋翻新/商空設計</h2>
+              <img class="img-fluid d-block mx-auto" src="./assets/img/services/sample1.jpg" alt="Shirts on a hanger">
+              <p>(可有圖片簡易說明)</p>
 
               <div>
-                <h4>收費方式</h4>
-                <ul class="list-inline">
-                  <li style="padding-top: 20px;"><strong>初步諮詢</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>丈量 提案 規劃</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>正式委託</strong><p style="padding-top: 3px;">  詳細說明</p></li>
-                  <li style="padding-top: 20px;"><strong>售後服務</strong><p style="padding-top: 3px;">  詳細說明</p></li>
+                <h5>工作流程</h5>
+                <ul class="list-inline" style="font-size: large;">
+                  <li style="padding-top: 20px; text-align: left;"><strong>1. 預約現場/辦公室提供免費諮詢服務，由設計師針對各個空間去了解客戶需求
+                  </strong></li>
+                  <li style="padding-top: 20px; text-align: left;"><strong>2. 平面圖繪製，與客戶說明設計方向，依客戶需求再做圖面調整
+                  </strong></li>
+                  <li style="padding-top: 20px; text-align: left;"><strong>3. 簽定設計約後，設計師繪製3D圖，施工圖面，材質設定，擬定工程預算
+                  </strong></li>
+                  <li style="padding-top: 20px; text-align: left;"><strong>4. 簽定工程約後，進行開工前置作業，進度安排
+                  </strong></li>
+                  <li style="padding-top: 20px; text-align: left;"><strong>5. 軟件建議：
+                    <ul class="list-inline" style="text-align: left; padding: 0">
+                      <li>· 安排傢俱</li>
+                      <li>· 窗簾提案</li>
+                      <li>· 陪同挑選</li>
+                    </ul>
+                  </strong></li>
+                  <li style="text-align: left;"><strong>6. 裝修工程中，確保施工現場如圖施作，完工後，再由設計師偕同客戶做成品驗收
+                  </strong></li>
                 </ul>
             </div>
+
 <p></p>
               <button class="btn" data-dismiss="modal" type="button" 
               style="color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;"

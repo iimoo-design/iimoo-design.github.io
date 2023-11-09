@@ -540,3 +540,25 @@ function portfolio_filter(catergory){
     }
   }
 )}
+
+function enlargeIcon(element) {
+  // const iconB = element.getElementsByTagName('i')[0];
+  // const iconI = element.getElementsByTagName('i')[1];
+  // iconB.style.transform = 'scale(1.1)'; // 根据需要调整大小
+  // iconI.style.transform = 'scale(1.1)'; // 根据需要调整大小
+  var text = element.getElementsByTagName('a')[0];
+  text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+  var originalSize = parseFloat(text.originalFontSize);
+  text.style.fontSize = originalSize * 1.2 + 'px'; // 將字體大小設置為原始大小的1.2倍
+  text.style.color = 'gray'
+}
+
+function resetIcon(element) {
+  // const iconB = element.getElementsByTagName('i')[0];
+  // const iconI = element.getElementsByTagName('i')[1];
+  // iconB.style.transform = 'scale(1)'; // 恢复原始大小
+  // iconI.style.transform = 'scale(1)'; // 恢复原始大小
+  var text = element.getElementsByTagName('a')[0];
+  text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
+  text.style.color = 'black'
+}
