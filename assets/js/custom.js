@@ -133,24 +133,16 @@ function showAll(){
         // subtitle.innerText = jsonData.副標題;
 
         
-        
         const description = document.createElement('p');
         description.innerText = splitTextWithPunctuation(jsonData.描述);
 
         const desDiv = document.createElement('div');
         desDiv.appendChild(description);
-        desDiv.style.width = "80%";
+        desDiv.style.textAlign = 'left';
+        desDiv.style.flex = '0 0 80%';
 
-        const padding = document.createElement('div');
-        padding.style.width = "20%";
-
-        const tDiv = document.createElement('div');
-        tDiv.style.textAlign = 'left';
-        tDiv.style.display = 'flex';
-        tDiv.style.width = '80%'
-      
-        tDiv.appendChild(desDiv);
-        tDiv.appendChild(padding);
+        const ulDiv = document.createElement('div');
+        ulDiv.style.flex = '0 0 auto';
 
         const ul = document.createElement('ul');
         ul.className = 'list-inline';
@@ -176,11 +168,11 @@ function showAll(){
 
         const div = document.createElement('div');
         div.className = 'row';
-        div.style.textAlign = 'left';
-        div.style.lineHeight = '2';
         div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        
 
-        div.appendChild(tDiv);
+        div.appendChild(desDiv);
         div.appendChild(ul);
 
         const leaveButton = document.createElement('button');
@@ -329,25 +321,16 @@ function showTopN(n){
         // subtitle.className = 'item-intro text-muted';
         // subtitle.innerText = jsonData.副標題;
 
-        
-        
         const description = document.createElement('p');
         description.innerText = splitTextWithPunctuation(jsonData.描述);
 
         const desDiv = document.createElement('div');
         desDiv.appendChild(description);
-        desDiv.style.width = "80%";
+        desDiv.style.textAlign = 'left';
+        desDiv.style.flex = '0 0 80%';
 
-        const padding = document.createElement('div');
-        padding.style.width = "20%";
-
-        const tDiv = document.createElement('div');
-        tDiv.style.textAlign = 'left';
-        tDiv.style.display = 'flex';
-        tDiv.style.width = '80%'
-      
-        tDiv.appendChild(desDiv);
-        tDiv.appendChild(padding);
+        const ulDiv = document.createElement('div');
+        ulDiv.style.flex = '0 0 auto';
 
         const ul = document.createElement('ul');
         ul.className = 'list-inline';
@@ -373,11 +356,11 @@ function showTopN(n){
 
         const div = document.createElement('div');
         div.className = 'row';
-        div.style.textAlign = 'left';
-        div.style.lineHeight = '2';
         div.style.display = 'flex';
+        div.style.flexWrap = 'wrap';
+        
 
-        div.appendChild(tDiv);
+        div.appendChild(desDiv);
         div.appendChild(ul);
 
         const leaveButton = document.createElement('button');
