@@ -231,6 +231,7 @@ function changeToChinese(element) {
       var text = element.getElementsByTagName('a')[0];
       if (text.innerHTML === 'Workflow') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '服務流程';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
@@ -238,6 +239,7 @@ function changeToChinese(element) {
       }
       if (text.innerHTML === 'Portfolio') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '作品集';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
@@ -245,6 +247,7 @@ function changeToChinese(element) {
       }
       if (text.innerHTML === 'About') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '關於我們';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
@@ -252,6 +255,7 @@ function changeToChinese(element) {
       }
       if (text.innerHTML === 'Team') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '團隊成員';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
@@ -259,6 +263,7 @@ function changeToChinese(element) {
       }
       if (text.innerHTML === 'Contact') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '聯絡我們';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
@@ -266,6 +271,7 @@ function changeToChinese(element) {
       }
       if (text.innerHTML === 'Home') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
+        text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '首頁';
         text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
