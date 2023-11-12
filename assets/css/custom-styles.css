@@ -50,11 +50,18 @@
   }
 }
 
-.scalable-div , .scalable-div h5, .scalable-div h4 , .scalable-div p{
+.scalable-div {
   padding: 20px; /* 可根據需求調整內邊距 */
-  font-size: 1.8vmin; /* 這裡的2是一個可調整的倍率，根據實際需求調整 */
-  padding: 0; /* 清除默认的内边距 */
+  font-size: 1em; /* 使用相對單位，根據實際需求調整 */
   justify-content: left; /* 水平居中 */
   align-items: center; /* 垂直居中 */
   text-align: left;
+}
+
+/* 如果需要調整 h5、h4、p 的字體大小，也可以使用 em */
+.scalable-div h5,
+.scalable-div h4,
+.scalable-div p, 
+.scalable-div li{
+  font-size: 1em; /* 使用相對單位，根據實際需求調整 */
 }
