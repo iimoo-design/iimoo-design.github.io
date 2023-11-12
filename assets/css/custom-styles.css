@@ -32,20 +32,29 @@
     flex-wrap: wrap;
   }
   
-  .lchild {
-    width: 70%;
-    box-sizing: border-box;
-    text-align: left;
-  }
-  
-  .rchild {
-    width: 150px;
-    box-sizing: border-box;
-    text-align: left;
-  }
+.lchild {
+  width: 70%;
+  box-sizing: border-box;
+  text-align: left;
+}
 
-  @media (max-width: 768px) {
-    .lchild {
-      width: 100%;
-    }
+.rchild {
+  width: 150px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .lchild {
+    width: 100%;
   }
+}
+
+.scalable-div , .scalable-div h5, .scalable-div h4 , .scalable-div p{
+  padding: 20px; /* 可根據需求調整內邊距 */
+  font-size: 1.8vmin; /* 這裡的2是一個可調整的倍率，根據實際需求調整 */
+  padding: 0; /* 清除默认的内边距 */
+  justify-content: left; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  text-align: left;
+}
