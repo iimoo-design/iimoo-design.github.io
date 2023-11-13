@@ -401,7 +401,7 @@ function enlargeIcon(element) {
   var text = element.getElementsByTagName('a')[0];
   text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
   var originalSize = parseFloat(text.originalFontSize);
-  text.style.fontSize = originalSize * 1.2 + 'px'; // 將字體大小設置為原始大小的1.2倍
+  text.style.fontSize = originalSize * 1.1 + 'px'; // 將字體大小設置為原始大小的1.2倍
   text.style.color = 'gray'
 }
 
