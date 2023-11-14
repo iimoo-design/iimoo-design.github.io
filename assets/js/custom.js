@@ -5,7 +5,7 @@ const workflowDataArray = JSON.parse(localStorage.getItem('workflow_description'
 jsonDataArray.reverse();
 
 function splitTextWithPunctuation(text) {
-  const punctuations = ['，', '。', '！', '？', '：', '；', '♡', '.'];
+  const punctuations = ['，', '。', '！', '？', '：', '；', '♡', '.', ';'];
   let result = '';
   let currentLine = '';
 
@@ -47,9 +47,9 @@ function show_N_wrok(N){
       const hoverContent = document.createElement('div');
       hoverContent.className = 'portfolio-hover-content';
 
-      const plusIcon = document.createElement('i');
-      plusIcon.className = 'fas fa-plus fa-3x';
-      hoverContent.appendChild(plusIcon);
+      // const plusIcon = document.createElement('i');
+      // plusIcon.className = 'fas fa-plus fa-3x';
+      // hoverContent.appendChild(plusIcon);
       hover.appendChild(hoverContent);
 
       const image = document.createElement('img');
@@ -125,7 +125,7 @@ function show_N_wrok(N){
         row.className = 'row';
 
         const col = document.createElement('div');
-        col.className = 'col-lg-8 mx-auto';
+        col.className = 'col-lg-12 mx-auto';
 
         const modalBody = document.createElement('div');
         modalBody.className = 'modal-body';
@@ -150,16 +150,43 @@ function show_N_wrok(N){
         ul.style.textAlign = 'left;';
 
         const locateLi = document.createElement('li');
-        locateLi.innerText = `區域： ${jsonData.區域}`;
+        
+        const strongElement = document.createElement('strong');
+        strongElement.innerText = 'Location';
+
+        const textNode = document.createTextNode(' / ');
+
+        locateLi.appendChild(strongElement);
+        locateLi.appendChild(textNode);
+        locateLi.appendChild(document.createTextNode(jsonData.區域));
 
         const dateLi = document.createElement('li');
-        dateLi.innerText = `年份： ${jsonData.日期}`;
+
+        const strongElement2 = document.createElement('strong');
+        strongElement2.innerText = 'Year';
+
+        dateLi.appendChild(strongElement2);
+        dateLi.appendChild(textNode.cloneNode(true));
+        dateLi.appendChild(document.createTextNode(jsonData.日期));
 
         const sizeLi = document.createElement('li');
-        sizeLi.innerText = `坪數： ${jsonData.坪數}坪`;
+
+        const strongElement3 = document.createElement('strong');
+        strongElement3.innerText = 'Area';
+
+        sizeLi.appendChild(strongElement3);
+        sizeLi.appendChild(textNode.cloneNode(true));
+        sizeLi.appendChild(document.createTextNode(`${jsonData.坪數}坪`));
 
         const projectNameLi = document.createElement('li');
-        projectNameLi.innerText = `專案名： ${jsonData.專案名}`;
+        
+        const strongElement4 = document.createElement('strong');
+        strongElement4.innerText = 'Project';
+
+        projectNameLi.appendChild(strongElement4);
+        projectNameLi.appendChild(textNode.cloneNode(true));
+        projectNameLi.appendChild(document.createTextNode(jsonData.專案名));
+
 
         ul.appendChild(locateLi);
         ul.appendChild(dateLi);
@@ -363,9 +390,9 @@ function portfolio_filter(catergory){
       const hoverContent = document.createElement('div');
       hoverContent.className = 'portfolio-hover-content';
 
-      const plusIcon = document.createElement('i');
-      plusIcon.className = 'fas fa-plus fa-3x';
-      hoverContent.appendChild(plusIcon);
+      // const plusIcon = document.createElement('i');
+      // plusIcon.className = 'fas fa-plus fa-3x';
+      // hoverContent.appendChild(plusIcon);
       hover.appendChild(hoverContent);
 
       const image = document.createElement('img');
@@ -541,10 +568,22 @@ function show_workflow(){
         Textul.appendChild(Textli);
         ulElement.appendChild(Textul);
       }
+
       scalableDiv.appendChild(h4Element);
       scalableDiv.appendChild(ulElement);
     }
 
+    if(jsonData['備註'] != null){
+      const remark = document.createElement('p');
+      remark.style.fontSize = '0.8em';
+      remark.style.fontWeight = 'normal';
+      remark.style.alignSelf = 'center';
+      remark.style.textAlign = 'center';
+      remark.style.color = '#FFAD86';
+      remark.textContent = splitTextWithPunctuation(jsonData['備註']);
+      scalableDiv.appendChild(remark);
+    }
+    
     colDiv.appendChild(h3Element);
     colDiv.appendChild(scalableDiv);
 

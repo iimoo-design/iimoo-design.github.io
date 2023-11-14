@@ -20,6 +20,7 @@
     color: black;
     text-align: center;
     border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .portfolio-select-button:hover {
@@ -68,7 +69,7 @@
 
 .scalable-div {
   padding: 20px; /* 可根據需求調整內邊距 */
-  font-size: 1em; /* 使用相對單位，根據實際需求調整 */
+  font-size: 1.1em; /* 使用相對單位，根據實際需求調整 */
   justify-content: left; /* 水平居中 */
   align-items: center; /* 垂直居中 */
   text-align: left;
@@ -77,9 +78,14 @@
 /* 如果需要調整 h5、h4、p 的字體大小，也可以使用 em */
 .scalable-div h5,
 .scalable-div h4,
-.scalable-div p, 
 .scalable-div li{
   font-size: 1em; /* 使用相對單位，根據實際需求調整 */
+}
+
+.scalable-div p{
+  font-size: 1em; /* 使用相對單位，根據實際需求調整 */
+  color: rgba(96, 95, 95, 0.85);
+  white-space: pre-wrap;
 }
 
 .description_list{
@@ -99,4 +105,5 @@
   color:rgba(96, 95, 95, 0.686);
   font-weight: normal;
   font-size: 0.9em;
+  line-height: 1.5em;
 }
