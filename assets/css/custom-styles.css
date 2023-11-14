@@ -1,8 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@300&display=swap');
+
 .popup-window-inner {
-    border: 3px solid;
-    border-image-slice: 1;
-    border-image-source: linear-gradient(to right, #8a8585, rgb(157, 152, 152));
-    border-radius: 10px;
     padding: 1px;
 }
 .leave-button {
@@ -35,17 +33,19 @@
 .parent {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
   
 .lchild {
-  width: 70%;
+  width: 80%;
   box-sizing: border-box;
   text-align: left;
-  color: rgb(128, 128, 128, 0.829);
+  color: rgb(109, 109, 109);
 }
 
 .lchild p{
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: 'Noto Serif HK', serif;
   line-height: 2em;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .rchild ul li{
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: 'Noto Serif HK', serif;
   line-height: 2em;
   color: rgb(128, 128, 128, 0.829);
 }
@@ -69,23 +69,37 @@
 
 .scalable-div {
   padding: 20px; /* 可根據需求調整內邊距 */
-  font-size: 1.1em; /* 使用相對單位，根據實際需求調整 */
   justify-content: left; /* 水平居中 */
   align-items: center; /* 垂直居中 */
   text-align: left;
+  font-family: 'Noto Serif HK', serif;
 }
 
 /* 如果需要調整 h5、h4、p 的字體大小，也可以使用 em */
 .scalable-div h5,
 .scalable-div h4,
+.scalable-div ul{
+  font-size: 1.1em; /* 使用相對單位，根據實際需求調整 */
+}
+
+.scalable-div ul li{
+  font-size: 0.9em; /* 使用相對單位，根據實際需求調整 */
+
+}
+
 .scalable-div li{
-  font-size: 1em; /* 使用相對單位，根據實際需求調整 */
+  font-size: 0.9em; /* 使用相對單位，根據實際需求調整 */
+
 }
 
 .scalable-div p{
-  font-size: 1em; /* 使用相對單位，根據實際需求調整 */
-  color: rgba(96, 95, 95, 0.85);
+  font-size: 1.05rem;
+  color: rgb(45, 45, 45);
   white-space: pre-wrap;
+}
+
+.scalable-div ul ul li{
+  font-size: 0.8em; /* 使用相對單位，根據實際需求調整 */
 }
 
 .description_list{
@@ -95,14 +109,14 @@
 
 .description_list li{
   font-weight: normal; 
-  color:rgb(104, 104, 104)
+  color:rgb(75, 75, 75)
 } 
 
 
 
 .description_list ul li{
   text-align: left;
-  color:rgba(96, 95, 95, 0.686);
+  color:rgba(96, 95, 95);
   font-weight: normal;
   font-size: 0.9em;
   line-height: 1.5em;

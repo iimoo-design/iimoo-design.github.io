@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@300&display=swap');
+
 body {
   overflow-x: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: 'Noto Serif HK', serif;
 }
 
 p {
@@ -20,12 +22,15 @@ a:hover {
 
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
   font-weight: 700;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h3{
+  font-family: 'Noto Serif HK', serif;
 }
 
 .page-section {
@@ -37,12 +42,12 @@ h6 {
   margin-bottom: 15px;
 }
 .page-section h3.section-subheading {
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 18px;
   /* font-style: italic; */
   margin-bottom: 75px;
   text-transform: none;
-  font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color:'gray!important';
+  font-family: 'Noto Serif HK', serif;
 }
 
 @media (min-width: 768px) {
@@ -176,17 +181,17 @@ header.masthead .intro-text {
 }
 header.masthead .intro-text .intro-lead-in {
   font-size: 22px;
-  /* font-style: italic; */
   line-height: 22px;
   margin-bottom: 25px;
-  font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: 'Noto Serif HK', serif;
 }
+
 header.masthead .intro-text .intro-heading {
   font-size: 50px;
   font-weight: 700;
   line-height: 50px;
   margin-bottom: 25px;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: 'Noto Serif HK', serif;
 }
 
 @media (min-width: 768px) {
@@ -199,14 +204,14 @@ header.masthead .intro-text .intro-heading {
     /* font-style: italic; */
     line-height: 40px;
     margin-bottom: 25px;
-    font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: 'Noto Serif HK', serif;
   }
   header.masthead .intro-text .intro-heading {
     font-size: 75px;
     font-weight: 700;
     line-height: 75px;
     margin-bottom: 50px;
-    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: 'Noto Serif HK', serif;
   }
 }
 .service-heading {
@@ -268,16 +273,14 @@ header.masthead .intro-text .intro-heading {
 }
 #portfolio .portfolio-item .portfolio-caption h4 {
   font-size: 16px;
-  font-style: italic;
   padding: 10px;
   margin: 0;
-  font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: 'Noto Serif HK', serif, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 #portfolio .portfolio-item .portfolio-caption p {
   font-size: 16px;
-  font-style: italic;
   margin: 0;
-  font-family: "Droid Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: 'Noto Serif HK', serif, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 #portfolio * {
   z-index: 2;
@@ -296,8 +299,6 @@ header.masthead .intro-text .intro-heading {
   padding: 100px 0;
   text-align: center;
   background-color: #ffffff;
-  border: 3px solid #8e8888;
-  border-radius: 10px;
   padding: 1px;
   margin: 50px auto;
 }

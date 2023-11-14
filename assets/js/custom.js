@@ -63,7 +63,7 @@ function show_N_wrok(N){
       const caption = document.createElement('div');
       caption.className = 'portfolio-caption';
 
-      const title = document.createElement('h4');
+      const title = document.createElement('a');
       title.innerText = jsonData.專案名;
 
       caption.appendChild(title);
@@ -199,10 +199,10 @@ function show_N_wrok(N){
 
         const div = document.createElement('div');
         div.className = 'parent'
-
+        
         div.appendChild(desDiv);
         div.appendChild(ulDiv);
-
+        
         const leaveButton = document.createElement('button');
         leaveButton.className = 'btn';
         leaveButton.setAttribute('data-dismiss', 'modal');
@@ -262,48 +262,48 @@ function changeToChinese(element) {
         text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '服務流程';
-        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        text.style.fontFamily = 'Courier New';
+        text.style.fontSize = originalSize * 1.0 + 'px'; // 將字體大小設置為原始大小的1.0倍
+        text.style.fontFamily = '';
       }
       if (text.innerHTML === 'Portfolio') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '作品集';
-        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        text.style.fontFamily = 'Courier New';
+        text.style.fontSize = originalSize * 1.0 + 'px'; // 將字體大小設置為原始大小的1.0倍
+        text.style.fontFamily = '';
       }
       if (text.innerHTML === 'About') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '關於我們';
-        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        text.style.fontFamily = 'Courier New';
+        text.style.fontSize = originalSize * 1.0 + 'px'; // 將字體大小設置為原始大小的1.0倍
+        text.style.fontFamily = '';
       }
       if (text.innerHTML === 'Team') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '團隊成員';
-        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        text.style.fontFamily = 'Courier New';
+        text.style.fontSize = originalSize * 1.0 + 'px'; // 將字體大小設置為原始大小的1.0倍
+        text.style.fontFamily = '';
       }
       if (text.innerHTML === 'Contact') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '聯絡我們';
-        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        text.style.fontFamily = 'Courier New';
+        text.style.fontSize = originalSize * 1.0 + 'px'; // 將字體大小設置為原始大小的1.0倍
+        text.style.fontFamily = '';
       }
       if (text.innerHTML === 'Home') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
         text.innerHTML = '首頁';
-        text.style.fontSize = originalSize * 1.3 + 'px'; // 將字體大小設置為原始大小的1.3倍
-        text.style.fontFamily = 'Courier New';
+        text.style.fontSize = originalSize * 1.0 + 'px'; // 將字體大小設置為原始大小的1.0倍
+        text.style.fontFamily = '';
       }
     }
   }
@@ -406,7 +406,7 @@ function portfolio_filter(catergory){
       const caption = document.createElement('div');
       caption.className = 'portfolio-caption';
 
-      const title = document.createElement('h4');
+      const title = document.createElement('a');
       title.innerText = jsonData.專案名;
 
       caption.appendChild(title);
@@ -579,7 +579,7 @@ function show_workflow(){
       remark.style.fontWeight = 'normal';
       remark.style.alignSelf = 'center';
       remark.style.textAlign = 'center';
-      remark.style.color = '#FFAD86';
+      remark.style.color = 'red';
       remark.textContent = splitTextWithPunctuation(jsonData['備註']);
       scalableDiv.appendChild(remark);
     }
