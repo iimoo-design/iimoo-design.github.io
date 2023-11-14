@@ -14,12 +14,16 @@
     color: black;
 }
 
-.portfolio-select_button {
+.portfolio-select-button {
     background-color: transparent;
     transition: background-color 0.3s;
     color: black;
     text-align: center;
     border: none;
+}
+
+.portfolio-select-button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .about-pre{
@@ -36,12 +40,24 @@
   width: 70%;
   box-sizing: border-box;
   text-align: left;
+  color: rgb(128, 128, 128, 0.829);
+}
+
+.lchild p{
+  font-family: Arial,Helvetica,sans-serif;
+  line-height: 2em;
 }
 
 .rchild {
   width: 150px;
   box-sizing: border-box;
   text-align: left;
+}
+
+.rchild ul li{
+  font-family: Arial,Helvetica,sans-serif;
+  line-height: 2em;
+  color: rgb(128, 128, 128, 0.829);
 }
 
 @media (max-width: 768px) {
