@@ -65,3 +65,22 @@
 .scalable-div li{
   font-size: 1em; /* 使用相對單位，根據實際需求調整 */
 }
+
+.description_list{
+  list-style-type: none; 
+  padding: 0;
+}
+
+.description_list li{
+  font-weight: normal; 
+  color:rgb(104, 104, 104)
+} 
+
+
+
+.description_list ul li{
+  text-align: left;
+  color:rgba(96, 95, 95, 0.686);
+  font-weight: normal;
+  font-size: 0.9em;
+}

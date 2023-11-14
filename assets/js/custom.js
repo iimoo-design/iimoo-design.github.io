@@ -1,5 +1,6 @@
 // 從 localStorage 中取出 savedVariable 的並剖析為 JavaScript 物件
-const jsonDataArray = JSON.parse(localStorage.getItem('savedVariable'));
+const jsonDataArray = JSON.parse(localStorage.getItem('portfolio_description'));
+const workflowDataArray = JSON.parse(localStorage.getItem('workflow_description'));
 
 jsonDataArray.reverse();
 
@@ -413,4 +414,153 @@ function resetIcon(element) {
   var text = element.getElementsByTagName('a')[0];
   text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
   text.style.color = 'black'
+}
+
+function show_workflow(){
+  //建立workflow-grid
+  workflowDataArray.forEach((jsonData, index) => {
+    const block = document.createElement('div');
+    block.className = 'col-md-4';
+    block.setAttribute('onmouseover', "enlargeIcon(this);");
+    block.setAttribute('onmouseout', "resetIcon(this);");
+    
+    const link = document.createElement('a');
+    link.setAttribute('data-toggle', 'modal');
+    link.setAttribute('href', `#wf${index + 1}`);
+    link.innerText = jsonData.服務名稱;
+
+    const title = document.createElement('h5');
+    title.className = 'service-heading';
+
+    title.appendChild(link);
+    block.appendChild(title);
+
+    const workflowgrid = document.querySelector('#wf-grid');
+    workflowgrid.appendChild(block);
+  });
+
+
+  //建立workflow敘述頁面
+  workflowDataArray.forEach((jsonData, index) => {
+    // 创建一个新的div元素
+    var modalDiv = document.createElement('div');
+
+    // 添加必需的class和id属性
+    modalDiv.className = 'portfolio-modal modal fade';
+    modalDiv.id = 'wf' + (index + 1);
+    modalDiv.setAttribute('tabindex', '-1');
+    modalDiv.setAttribute('role', 'dialog');
+    modalDiv.style.display = 'none';
+    modalDiv.setAttribute('aria-hidden', 'true');
+
+    // 创建modal-dialog元素
+    var modalDialog = document.createElement('div');
+    modalDialog.className = 'modal-dialog';
+
+    // 创建modal-content元素
+    var modalContent = document.createElement('div');
+    modalContent.className = 'modal-content';
+
+    // 创建popup-window-inner元素
+    var popupWindowInner = document.createElement('div');
+    popupWindowInner.className = 'popup-window-inner';
+
+    // 创建包含按钮的相对定位的div元素
+    var buttonContainer = document.createElement('div');
+    buttonContainer.style.position = 'relative';
+
+    // 创建关闭按钮
+    var closeButton = document.createElement('button');
+    closeButton.className = 'btn leave-button';
+    closeButton.setAttribute('data-dismiss', 'modal');
+    closeButton.setAttribute('type', 'button');
+    closeButton.setAttribute('onmouseover', "this.style.backgroundColor='lightgray';");
+    closeButton.setAttribute('onmouseout', "this.style.backgroundColor='rgb(255, 255, 255, 0)';");
+
+    // 创建关闭按钮图标
+    var closeIcon = document.createElement('i');
+    closeIcon.className = 'fas fa-times';
+
+    // 将关闭按钮图标附加到关闭按钮
+    closeButton.appendChild(closeIcon);
+
+    // 将关闭按钮附加到包含按钮的相对定位的div元素
+    buttonContainer.appendChild(closeButton);
+
+    // 创建container元素
+    var containerDiv = document.createElement('div');
+    containerDiv.className = 'container';
+
+    // 创建row元素
+    var rowDiv = document.createElement('div');
+    rowDiv.className = 'row';
+
+    // 创建col-lg-12 text-center元素
+    var colDiv = document.createElement('div');
+    colDiv.className = 'col-lg-12 text-center';
+
+    // 创建h3元素
+    var h3Element = document.createElement('h3');
+    h3Element.className = 'section-heading text-uppercase';
+    h3Element.innerText = jsonData.服務名稱;
+
+    // 创建scalable-div元素
+    const scalableDiv = document.createElement('div');
+    scalableDiv.className = 'scalable-div';
+
+    const workflow_detail = JSON.parse(JSON.stringify(jsonData.服務說明));
+
+    for(var key in workflow_detail){
+      if(key == '費用備註'){
+        continue;
+      }
+      const h4Element = document.createElement('h4');
+      h4Element.textContent = key;
+
+      const ulElement = document.createElement('ul');
+      ulElement.className = 'description_list';
+
+      const liElement = document.createElement('li');
+      liElement.style.paddingLeft = '0px';
+      liElement.textContent = splitTextWithPunctuation(workflow_detail[key]);
+
+      ulElement.appendChild(liElement);s
+      if(key == '費用' && workflow_detail['費用備註'] != null){
+        const Textul = document.createElement('ul')
+        Textul.style.listStyleType = 'none';
+        Textul.style.padding = '0';
+
+        const Textli = document.createElement('li');
+        var split_text = splitTextWithPunctuation(workflow_detail['費用備註'])
+        Textli.textContent = `(${split_text})`;
+        Textli.style.listStyleType = 'none';
+        Textli.style.margin = '0';
+
+        Textul.appendChild(Textli);
+        ulElement.appendChild(Textul);
+      }
+      scalableDiv.appendChild(h4Element);
+      scalableDiv.appendChild(ulElement);
+    }
+
+    colDiv.appendChild(h3Element);
+    colDiv.appendChild(scalableDiv);
+
+    rowDiv.appendChild(colDiv);
+
+    containerDiv.appendChild(rowDiv);
+
+    popupWindowInner.appendChild(buttonContainer);
+    popupWindowInner.appendChild(containerDiv);
+
+    modalContent.appendChild(popupWindowInner);
+
+    modalDialog.appendChild(modalContent);
+
+    modalDiv.appendChild(modalDialog);
+
+    // 将modalDiv元素添加到文档的body中
+    document.body.appendChild(modalDiv);
+
+  });
 }

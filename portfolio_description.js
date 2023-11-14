@@ -49,4 +49,4 @@ const description = [
 
 
 // 將 description 轉換為 JSON 字串後存儲到 localStorage 中
-localStorage.setItem('savedVariable', JSON.stringify(description));
+localStorage.setItem('portfolio_description', JSON.stringify(description));
