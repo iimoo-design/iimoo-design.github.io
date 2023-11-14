@@ -454,7 +454,7 @@ function show_workflow(){
     const link = document.createElement('a');
     link.setAttribute('data-toggle', 'modal');
     link.setAttribute('href', `#wf${index + 1}`);
-    link.innerText = jsonData.服務名稱;
+    link.innerText = '0' + (index+1) + ` ${jsonData.服務名稱}`;
 
     const title = document.createElement('h5');
     title.className = 'service-heading';
@@ -533,26 +533,32 @@ function show_workflow(){
 
     // 创建scalable-div元素
     const scalableDiv = document.createElement('div');
-    scalableDiv.className = 'scalable-div';
+    scalableDiv.className = 'row scalable-div';
 
     const workflow_detail = JSON.parse(JSON.stringify(jsonData.服務說明));
-
+    var index = 0;
     for(var key in workflow_detail){
       if(key == '費用備註'){
         continue;
       }
+      const h4Div = document.createElement('div');
+      h4Div.className = 'row';
       const h4Element = document.createElement('h4');
       h4Element.textContent = key;
+      h4Div.appendChild(h4Element);
 
+      const ulDiv = document.createElement('div');
+      ulDiv.className = 'row';
       const ulElement = document.createElement('ul');
       ulElement.className = 'description_list';
+      ulDiv.appendChild(ulElement);
 
       const liElement = document.createElement('li');
-      liElement.style.paddingLeft = '0px';
       liElement.style.whiteSpace = 'pre-line';
-      liElement.textContent = splitTextWithPunctuation(workflow_detail[key]);
+      liElement.textContent =workflow_detail[key];
 
       ulElement.appendChild(liElement);
+
       if(key == '費用' && workflow_detail['費用備註'] != null){
         const Textul = document.createElement('ul')
         Textul.style.listStyleType = 'none';
@@ -569,23 +575,52 @@ function show_workflow(){
         ulElement.appendChild(Textul);
       }
 
-      scalableDiv.appendChild(h4Element);
-      scalableDiv.appendChild(ulElement);
+      const col = document.createElement('div');
+      col.className = 'col-md-6';
+      col.style.height = '100%';
+      const numberDiv = document.createElement('div');
+      numberDiv.className = 'row';
+      numberDiv.style.width = '50%';
+      numberDiv.style.height = '100%';
+      numberDiv.style.textAlign = 'center';
+      numberDiv.style.alignSelf = 'center';
+      const number = document.createElement('h2');
+      if(index+1 >= 10){
+        number.textContent = `${index+1}`;
+      }
+      else{
+        number.textContent = `0${index+1}`;
+      }
+      numberDiv.appendChild(number);
+      col.appendChild(numberDiv);
+      const textDiv = document.createElement('div');
+      textDiv.className = 'col';
+      textDiv.style.marginTop = 'auto';
+      textDiv.style.width = '100%';
+      textDiv.style.height = '100%';
+      textDiv.appendChild(h4Div);
+      textDiv.appendChild(ulDiv);
+      col.appendChild(textDiv);
+      scalableDiv.appendChild(col);
+      index++;   
     }
 
+    const scalableDiv2 = document.createElement('div');
     if(jsonData['備註'] != null){
+      scalableDiv2.className = 'scalable-div';
       const remark = document.createElement('p');
-      remark.style.fontSize = '0.8em';
+      remark.style.fontSize = '0.9em';
       remark.style.fontWeight = 'normal';
       remark.style.alignSelf = 'center';
       remark.style.textAlign = 'center';
       remark.style.color = 'red';
       remark.textContent = splitTextWithPunctuation(jsonData['備註']);
-      scalableDiv.appendChild(remark);
+      scalableDiv2.appendChild(remark);
     }
     
     colDiv.appendChild(h3Element);
     colDiv.appendChild(scalableDiv);
+    colDiv.appendChild(scalableDiv2);
 
     rowDiv.appendChild(colDiv);
 
