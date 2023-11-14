@@ -5,7 +5,7 @@ const workflowDataArray = JSON.parse(localStorage.getItem('workflow_description'
 jsonDataArray.reverse();
 
 function splitTextWithPunctuation(text) {
-  const punctuations = [',', '，', '。', '！', '？', '：', '；', '♡', '.'];
+  const punctuations = ['，', '。', '！', '？', '：', '；', '♡', '.'];
   let result = '';
   let currentLine = '';
 
@@ -522,18 +522,20 @@ function show_workflow(){
 
       const liElement = document.createElement('li');
       liElement.style.paddingLeft = '0px';
+      liElement.style.whiteSpace = 'pre-line';
       liElement.textContent = splitTextWithPunctuation(workflow_detail[key]);
 
-      ulElement.appendChild(liElement);s
+      ulElement.appendChild(liElement);
       if(key == '費用' && workflow_detail['費用備註'] != null){
         const Textul = document.createElement('ul')
         Textul.style.listStyleType = 'none';
         Textul.style.padding = '0';
 
         const Textli = document.createElement('li');
-        var split_text = splitTextWithPunctuation(workflow_detail['費用備註'])
+        var split_text =(workflow_detail['費用備註'])
         Textli.textContent = `(${split_text})`;
         Textli.style.listStyleType = 'none';
+        Textli.style.whiteSpace = 'pre-line';
         Textli.style.margin = '0';
 
         Textul.appendChild(Textli);
