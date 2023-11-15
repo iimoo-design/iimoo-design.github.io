@@ -769,6 +769,7 @@ function show_workflow(){
     h3Element.className = 'section-heading text-uppercase';
     h3Element.innerText = jsonData.服務名稱;
 
+
     // 创建scalable-div元素
     const scalableDiv = document.createElement('div');
     scalableDiv.className = 'row scalable-div';
@@ -815,12 +816,14 @@ function show_workflow(){
 
       const col = document.createElement('div');
       col.className = 'col-md-6';
-      col.style.height = '100%';
+      col.style.height = '150px';
+      col.style.display = 'flex';
+      col.style.flexDirection = 'column';
+      col.style.alignItems = 'flex-start';
+      col.style.marginTop = '30px';
       const numberDiv = document.createElement('div');
       numberDiv.className = 'row';
-      numberDiv.style.width = '50%';
-      numberDiv.style.height = '100%';
-      numberDiv.style.textAlign = 'center';
+      numberDiv.style.width = '90%';
       numberDiv.style.alignSelf = 'center';
       const number = document.createElement('h2');
       if(index+1 >= 10){
@@ -830,15 +833,16 @@ function show_workflow(){
         number.textContent = `0${index+1}.`;
       }
       numberDiv.appendChild(number);
-      col.appendChild(numberDiv);
       const textDiv = document.createElement('div');
       textDiv.className = 'col';
       textDiv.style.marginTop = 'auto';
       textDiv.style.width = '100%';
       textDiv.style.height = '100%';
+      textDiv.style.marginLeft = '15px';
       textDiv.appendChild(h4Div);
       textDiv.appendChild(ulDiv);
-      col.appendChild(textDiv);
+      numberDiv.appendChild(textDiv);
+      col.appendChild(numberDiv);
       scalableDiv.appendChild(col);
       index++;   
     }
