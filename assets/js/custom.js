@@ -198,10 +198,12 @@ function show_N_wrok(N){
         ulDiv.appendChild(ul);
 
         const div = document.createElement('div');
-        div.className = 'parent'
+        div.className = 'row parent'; //要恢復左右排列就刪掉
         
-        div.appendChild(desDiv);
+        //決定哪個在左邊
         div.appendChild(ulDiv);
+        div.appendChild(desDiv);
+        
         
         const leaveButton = document.createElement('button');
         leaveButton.className = 'btn';
@@ -444,10 +446,16 @@ function resetIcon(element) {
 }
 
 function show_workflow(){
-  //建立workflow-grid
+  const col1 = document.createElement('div');
+  col1.className = 'col-md-6';
+  col1.style.height = '100%';
+  col1.style.paddingBlock = '10px';
+  const col2 = document.createElement('div');
+  col2.className = 'col-md-6';
+  col2.style.height = '100%';
   workflowDataArray.forEach((jsonData, index) => {
     const block = document.createElement('div');
-    block.className = 'col-md-4';
+    block.textAlign = 'center';
     block.setAttribute('onmouseover', "enlargeIcon(this);");
     block.setAttribute('onmouseout', "resetIcon(this);");
     
@@ -457,14 +465,25 @@ function show_workflow(){
     link.innerText = '0' + (index+1) + ` ${jsonData.服務名稱}`;
 
     const title = document.createElement('h5');
+    title.display = 'block';
+    title.style.paddingTop = '20px';
+    title.style.paddingBottom = '20px';
+    title.style.fontSize = '1.3em';
     title.className = 'service-heading';
 
     title.appendChild(link);
     block.appendChild(title);
-
-    const workflowgrid = document.querySelector('#wf-grid');
-    workflowgrid.appendChild(block);
+    
+    if(index < 3){
+      col1.appendChild(block);
+    }
+    else{
+      col2.appendChild(block);
+    }
   });
+  const workflowgrid = document.querySelector('#wf-grid');
+  workflowgrid.appendChild(col1);
+  workflowgrid.appendChild(col2);
 
 
   //建立workflow敘述頁面
@@ -586,10 +605,10 @@ function show_workflow(){
       numberDiv.style.alignSelf = 'center';
       const number = document.createElement('h2');
       if(index+1 >= 10){
-        number.textContent = `${index+1}`;
+        number.textContent = `${index+1}.`;
       }
       else{
-        number.textContent = `0${index+1}`;
+        number.textContent = `0${index+1}.`;
       }
       numberDiv.appendChild(number);
       col.appendChild(numberDiv);
