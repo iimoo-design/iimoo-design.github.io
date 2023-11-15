@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@300&display=swap'); */
 
 .popup-window-inner {
     padding: 1px;
@@ -94,7 +94,7 @@
 }
 
 .scalable-div p{
-  font-size: 1.05rem;
+  font-size: 1em;
   color: rgb(45, 45, 45);
   white-space: pre-wrap;
   text-transform: none;
