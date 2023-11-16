@@ -616,7 +616,7 @@ function show_workflow(){
 
       const col = document.createElement('div');
       col.className = 'col-md-6';
-      col.style.height = '150px';
+      col.style.height = 'auto';
       col.style.display = 'flex';
       col.style.flexDirection = 'column';
       col.style.alignItems = 'flex-start';
