@@ -56,12 +56,12 @@ h3{
   }
 }
 ::-moz-selection {
-  background: #fed136;
+  background: #a4a29983;
   text-shadow: none;
 }
 
 ::selection {
-  background: #fed136;
+  background: #a4a29983;
   text-shadow: none;
 }
 
