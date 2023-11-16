@@ -241,21 +241,36 @@ function build_portfolio(jsonDataArray){
 
 function show_N_wrok(N){
     if(N == 'all'){
-      build_portfolio(jsonDataArray);
+      build_portfolio(jsonDataArray.reverse());
     }
     else{
       var n = N;
       var result = [];
       var indexes = new Set();
-      while (indexes.size < n) {
-        const randomIndex = Math.floor(Math.random() * jsonDataArray.length);
-        indexes.add(randomIndex);
+      var catergory = new Set();
+      //隨機取得n個不重複的索引
+      // while (indexes.size < n) {
+      //   const randomIndex = Math.floor(Math.random() * jsonDataArray.length);
+      //   indexes.add(randomIndex);
+      // }
+      var rev_array = jsonDataArray.reverse();
+      for(var i = 0; i < rev_array.length; i++){
+        if(indexes.size == n){
+          break;
+        }
+        if(catergory.has(rev_array[i].種類)){
+          continue;
+        }
+        else{
+          indexes.add(i);
+          catergory.add(rev_array[i].種類);
+        }
       }
       //依據隨機索引取得對應的元素
       indexes.forEach(index => {
-        result.push(jsonDataArray[index]);
+        result.push(rev_array[index]);
       });
-      build_portfolio(result);
+      build_portfolio(result.reverse());
     } 
 }
 

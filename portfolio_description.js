@@ -70,8 +70,9 @@ const description = [
 
 
 
-// 將 description 轉換為 JSON 字串後存儲到 localStorage 中
-description.sort((a, b) => {
-    return new Date(b.日期) - new Date(a.日期);
-});
+// // 將 description 轉換為 JSON 字串後存儲到 localStorage 中
+// description.sort((a, b) => {
+//     return new Date(b.日期) - new Date(a.日期);
+// });
+
 localStorage.setItem('portfolio_description', JSON.stringify(description));
