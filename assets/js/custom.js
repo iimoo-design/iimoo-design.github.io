@@ -274,6 +274,32 @@ function show_N_wrok(N){
     } 
 }
 
+//滑動到指定區域時才顯示作品
+function onScrollToSection(callback, N) {
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+  }
+
+  function handleScroll() {
+    const section = document.getElementById('portfolio');
+
+    if (isElementInViewport(section)) {
+      // 如果滾動到指定區塊，則執行提供的回調函數
+      callback(N);
+      // 一旦執行過回調函數，停止監聽滾動事件，以防止重複觸發
+      window.removeEventListener('scroll', handleScroll);
+    }
+  }
+
+  // 監聽滾動事件
+  window.addEventListener('scroll', handleScroll);
+}
+
+
 function back_to_top(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -402,7 +428,12 @@ function portfolio_filter(catergory){
   // 再讓符合條件的作品顯示
   jsonDataArray.forEach((jsonData, index) =>  {
     if(catergory == 'all'){
-      location.reload();
+      var container = document.querySelector('.portfolio-container');
+      var items = container.querySelectorAll('.col-md-4.col-sm-6.portfolio-item');
+      items.forEach(function(item) {
+          item.remove();
+      });
+      build_portfolio(jsonDataArray.reverse());
     }
     else{
       if(jsonData.種類 != catergory){
@@ -704,3 +735,8 @@ function disableRightClick(event) {
 }
 
 document.addEventListener('contextmenu', disableRightClick);
+
+//重新整理後回到最頂端
+window.addEventListener('load', function() {
+  window.scrollTo(0, 0);
+});
