@@ -241,7 +241,8 @@ function build_portfolio(jsonDataArray){
 
 function show_N_wrok(N){
     if(N == 'all'){
-      build_portfolio(jsonDataArray.reverse());
+      var temp = jsonDataArray.slice().reverse();
+      build_portfolio(temp);
     }
     else{
       var n = N;
@@ -253,7 +254,7 @@ function show_N_wrok(N){
       //   const randomIndex = Math.floor(Math.random() * jsonDataArray.length);
       //   indexes.add(randomIndex);
       // }
-      var rev_array = jsonDataArray.reverse();
+      var rev_array = jsonDataArray.slice().reverse();
       for(var i = 0; i < rev_array.length; i++){
         if(indexes.size == n){
           break;
@@ -426,14 +427,15 @@ function portfolio_filter(catergory){
   });
 
   // 再讓符合條件的作品顯示
-  jsonDataArray.forEach((jsonData, index) =>  {
+  var temp = jsonDataArray.slice().reverse();
+  temp.forEach((jsonData, index) =>  {
     if(catergory == 'all'){
       var container = document.querySelector('.portfolio-container');
       var items = container.querySelectorAll('.col-md-4.col-sm-6.portfolio-item');
       items.forEach(function(item) {
           item.remove();
       });
-      build_portfolio(jsonDataArray.reverse());
+      build_portfolio(temp);
     }
     else{
       if(jsonData.種類 != catergory){
