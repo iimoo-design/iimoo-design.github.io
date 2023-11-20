@@ -116,11 +116,11 @@
 } 
 
 
-
 .description_list ul li{
   text-align: left;
   color:rgba(96, 95, 95);
   font-weight: normal;
   font-size: 0.9em;
   line-height: 1.5em;
+  list-style-type: disc; 
 }
