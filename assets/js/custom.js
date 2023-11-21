@@ -731,12 +731,16 @@ function show_workflow(){
   });
 }
 
-//禁止點擊右鍵
-function disableRightClick(event) {
-  event.preventDefault();
-}
+//禁止點擊右鍵與複製
+function disableRightClickAndCopy() {
+  document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+  });
 
-document.addEventListener('contextmenu', disableRightClick);
+  document.addEventListener('copy', function (e) {
+      e.preventDefault();
+  });
+}
 
 //重新整理後回到最頂端
 window.addEventListener('load', function() {
