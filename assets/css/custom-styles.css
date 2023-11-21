@@ -135,3 +135,13 @@
   color: rgba(0, 0, 0, 0.309);
   text-decoration: underline;
 }
+
+.vertical-align{
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-align h5 {
+  margin-top: 0;
+  margin-bottom: 50px;
+}

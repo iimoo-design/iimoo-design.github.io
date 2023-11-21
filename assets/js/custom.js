@@ -37,7 +37,7 @@ function build_portfolio(jsonDataArray){
   result = result.concat(last_category);
   result.forEach((jsonData, index) => {
     const col = document.createElement('div');
-    col.className = 'col-md-4 col-sm-6 portfolio-item';
+    col.className = 'col-md-4 portfolio-item';
 
     const link = document.createElement('a');
     link.className = 'portfolio-link';
@@ -513,13 +513,12 @@ function resetIcon(element) {
 function show_workflow(){
   const col1 = document.createElement('div');
   col1.className = 'col-md-6';
-  col1.style.height = '100%';
-  col1.style.paddingBlock = '10px';
   const col2 = document.createElement('div');
   col2.className = 'col-md-6';
-  col2.style.paddingBlock = '10px';
+  col2.style.height = '100%';
   workflowDataArray.forEach((jsonData, index) => {
     const block = document.createElement('div');
+    block.className = 'vertical-align';
     block.setAttribute('onmouseover', "enlargeIcon(this);");
     block.setAttribute('onmouseout', "resetIcon(this);");
     
@@ -530,8 +529,7 @@ function show_workflow(){
 
     const title = document.createElement('h5');
     title.display = 'block';
-    title.style.paddingTop = '20px';
-    title.style.paddingBottom = '20px';
+    
     title.style.fontSize = '1.3em';
     title.className = 'service-heading';
 
@@ -547,7 +545,6 @@ function show_workflow(){
   });
   const workflowgrid = document.querySelector('#wf-grid');
   workflowgrid.appendChild(col1);
-  col2.style.height = `${col1.clientHeight}px`;
   workflowgrid.appendChild(col2);
 
 
