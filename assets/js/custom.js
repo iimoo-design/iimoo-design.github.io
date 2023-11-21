@@ -23,7 +23,19 @@ function splitTextWithPunctuation(text) {
 }
 
 function build_portfolio(jsonDataArray){
-  jsonDataArray.forEach((jsonData, index) => {
+  var temp = jsonDataArray.slice();
+  var result = [];
+  var last_category = [];
+  temp.forEach((jsonData, index) => {
+    if(jsonData.種類 == '概念/3D'){
+      last_category.push(jsonData);
+    }
+    else{
+      result.push(jsonData);
+    }
+  });
+  result = result.concat(last_category);
+  result.forEach((jsonData, index) => {
     const col = document.createElement('div');
     col.className = 'col-md-4 col-sm-6 portfolio-item';
 
@@ -71,7 +83,7 @@ function build_portfolio(jsonDataArray){
     portfolioContainer.appendChild(col);
   });
 
-  jsonDataArray.forEach((jsonData, index) => {
+  result.forEach((jsonData, index) => {
     const image_item = [];
       for(let i = 0; i <=6 ; i++){
         const image = document.createElement('img');
@@ -197,20 +209,6 @@ function build_portfolio(jsonDataArray){
       //決定哪個在左邊
       div.appendChild(ulDiv);
       div.appendChild(desDiv);
-      
-      
-      const leaveButton = document.createElement('button');
-      leaveButton.className = 'btn';
-      leaveButton.setAttribute('data-dismiss', 'modal');
-      leaveButton.setAttribute('type', 'button');
-      leaveButton.setAttribute('style', 'color:white; background-color: rgb(104, 95, 95); border: 1px solid whitesmoke;');
-      leaveButton.setAttribute('onmouseover', "this.style.backgroundColor='lightgray'; this.style.borderColor='white';");
-      leaveButton.setAttribute('onmouseout', "this.style.backgroundColor='gray'; this.style.borderColor='whitesmoke';");
-
-      const leaveIcon = document.createElement('i');
-      leaveIcon.className = 'fas fa-times';
-      leaveButton.appendChild(leaveIcon);
-      leaveButton.appendChild(document.createTextNode('離開'));
 
       // modalBody.appendChild(title);
       // modalBody.appendChild(subtitle);
@@ -222,7 +220,7 @@ function build_portfolio(jsonDataArray){
       }
       
       modalBody.appendChild(document.createElement('p'));
-      modalBody.appendChild(leaveButton);
+      
 
       col.appendChild(modalBody);
       row.appendChild(col);
@@ -267,7 +265,7 @@ function show_N_wrok(N){
           catergory.add(rev_array[i].種類);
         }
       }
-      //依據隨機索引取得對應的元素
+      //將三種不同種類的作品分別放入result
       indexes.forEach(index => {
         result.push(rev_array[index]);
       });
@@ -519,7 +517,6 @@ function show_workflow(){
   col1.style.paddingBlock = '10px';
   const col2 = document.createElement('div');
   col2.className = 'col-md-6';
-  col2.style.height = '100%';
   col2.style.paddingBlock = '10px';
   workflowDataArray.forEach((jsonData, index) => {
     const block = document.createElement('div');
@@ -550,6 +547,7 @@ function show_workflow(){
   });
   const workflowgrid = document.querySelector('#wf-grid');
   workflowgrid.appendChild(col1);
+  col2.style.height = `${col1.clientHeight}px`;
   workflowgrid.appendChild(col2);
 
 
