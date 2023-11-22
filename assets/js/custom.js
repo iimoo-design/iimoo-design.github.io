@@ -26,15 +26,21 @@ function build_portfolio(jsonDataArray){
   var temp = jsonDataArray.slice();
   var result = [];
   var last_category = [];
+  var result_indexs = [];
+  var last_category_indexs = [];
   temp.forEach((jsonData, index) => {
     if(jsonData.種類 == '概念/3D'){
       last_category.push(jsonData);
+      last_category_indexs.push(index);
     }
     else{
       result.push(jsonData);
+      result_indexs.push(index);
     }
   });
   result = result.concat(last_category);
+  result_indexs = result_indexs.concat(last_category_indexs);
+
   result.forEach((jsonData, index) => {
     const col = document.createElement('div');
     col.className = 'col-md-4 portfolio-item';
@@ -42,7 +48,7 @@ function build_portfolio(jsonDataArray){
     const link = document.createElement('a');
     link.className = 'portfolio-link';
     link.setAttribute('data-toggle', 'modal');
-    link.setAttribute('href', `#p${index + 1}`);
+    link.setAttribute('href', `#p${result_indexs[index] + 1}`);
 
     const hover = document.createElement('div');
     hover.className = 'portfolio-hover';
@@ -97,7 +103,7 @@ function build_portfolio(jsonDataArray){
 
       const modal = document.createElement('div');
       modal.className = 'portfolio-modal modal fade';
-      modal.id = (`p${index + 1}`);
+      modal.id = (`p${result_indexs[index] + 1}`);
       modal.tabIndex = '-1';
       modal.role = 'dialog';
       modal.style.display = 'none';
@@ -425,17 +431,21 @@ function portfolio_filter(catergory){
   });
 
   // 再讓符合條件的作品顯示
-  var temp = jsonDataArray.slice().reverse();
-  temp.forEach((jsonData, index) =>  {
-    if(catergory == 'all'){
+  if(catergory == 'all'){
+      var temp = jsonDataArray.slice().reverse();
+      temp.forEach((jsonData, index) =>  {
+    
       var container = document.querySelector('.portfolio-container');
       var items = container.querySelectorAll('.col-md-4.portfolio-item');
       items.forEach(function(item) {
           item.remove();
       });
       build_portfolio(temp);
-    }
-    else{
+    });
+  }
+  else{
+    var temp = jsonDataArray.slice().reverse();
+    temp.forEach((jsonData, index) =>  {
       if(jsonData.種類 != catergory){
         return;
       }
@@ -484,9 +494,9 @@ function portfolio_filter(catergory){
       // 將新建的元素添加到頁面中的適當位置
       const portfolioContainer = document.querySelector('.portfolio-container'); // 假設有一個包含這些區塊的容器元素
       portfolioContainer.appendChild(col);
-    }
+    });
   }
-)}
+}
 
 function enlargeIcon(element) {
   // const iconB = element.getElementsByTagName('i')[0];
