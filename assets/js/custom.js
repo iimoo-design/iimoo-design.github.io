@@ -419,7 +419,7 @@ function changeToEnglish(element) {
 function portfolio_filter(catergory){
   // 先讓所有作品消失
   var container = document.querySelector('.portfolio-container');
-  var items = container.querySelectorAll('.col-md-4.col-sm-6.portfolio-item');
+  var items = container.querySelectorAll('.col-md-4.portfolio-item');
   items.forEach(function(item) {
       item.remove();
   });
@@ -429,7 +429,7 @@ function portfolio_filter(catergory){
   temp.forEach((jsonData, index) =>  {
     if(catergory == 'all'){
       var container = document.querySelector('.portfolio-container');
-      var items = container.querySelectorAll('.col-md-4.col-sm-6.portfolio-item');
+      var items = container.querySelectorAll('.col-md-4.portfolio-item');
       items.forEach(function(item) {
           item.remove();
       });
@@ -440,7 +440,7 @@ function portfolio_filter(catergory){
         return;
       }
       const col = document.createElement('div');
-      col.className = 'col-md-4 col-sm-6 portfolio-item';
+      col.className = 'col-md-4 portfolio-item';
 
       const link = document.createElement('a');
       link.className = 'portfolio-link';
