@@ -320,11 +320,11 @@ function show_viewAll_button(n){
 function changeToChinese(element) {
     if (element) {
       var text = element.getElementsByTagName('a')[0];
-      if (text.innerHTML === 'Workflow') {
+      if (text.innerHTML === 'Services') {
         text.originalFontSize = window.getComputedStyle(text).fontSize; // 儲存原始字體大小
         text.originalFontFamily = window.getComputedStyle(text).fontFamily;
         var originalSize = parseFloat(text.originalFontSize);
-        text.innerHTML = '服務流程';
+        text.innerHTML = '服務項目';
         text.style.fontSize = originalSize * 1.0 + 'px'; // 將字體大小設置為原始大小的1.0倍
         text.style.fontFamily = '';
       }
@@ -374,8 +374,8 @@ function changeToChinese(element) {
 function changeToEnglish(element) {
   if (element) {
       var text = element.getElementsByTagName('a')[0];
-      if (text.innerHTML === '服務流程') {
-      text.innerHTML = 'Workflow';
+      if (text.innerHTML === '服務項目') {
+      text.innerHTML = 'Services';
       text.style.fontSize = text.originalFontSize; // 恢復原始字體大小
       text.style.fontFamily = text.originalFontFamily//恢復原本的字體
       }
