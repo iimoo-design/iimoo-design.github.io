@@ -266,6 +266,9 @@ function show_N_wrok(N){
         if(catergory.has(rev_array[i].種類)){
           continue;
         }
+        if(rev_array[i].種類 == '專案工程'){
+          continue;
+        }
         else{
           indexes.add(i);
           catergory.add(rev_array[i].種類);
