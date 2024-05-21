@@ -91,7 +91,7 @@ function build_portfolio(jsonDataArray){
 
   result.forEach((jsonData, index) => {
     const image_item = [];
-      for(let i = 0; i <=6 ; i++){
+      for(let i = 0; i <=20 ; i++){
         const image = document.createElement('img');
         image.className = 'img-fluid d-block mx-auto';
         image.setAttribute('src', jsonData.圖片連結 + `${i}.jpg`);
@@ -220,7 +220,7 @@ function build_portfolio(jsonDataArray){
       // modalBody.appendChild(subtitle);
       modalBody.appendChild(image_item[0]);
       modalBody.appendChild(div);
-      for(let j = 1; j <= 6; j++){
+      for(let j = 1; j <= 20; j++){
         if(image_item[j] != null)
           modalBody.appendChild(image_item[j]);
       }
