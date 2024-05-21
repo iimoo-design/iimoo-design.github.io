@@ -22,25 +22,46 @@ function splitTextWithPunctuation(text) {
   return result;
 }
 
-function build_portfolio(jsonDataArray){
-  var temp = jsonDataArray.slice();
+function build_portfolio(jsonDataArray, page){
   var result = [];
-  var last_category = [];
   var result_indexs = [];
-  var last_category_indexs = [];
-  temp.forEach((jsonData, index) => {
-    if(jsonData.種類 == '概念/3D'){
-      last_category.push(jsonData);
-      last_category_indexs.push(index);
-    }
-    else{
-      result.push(jsonData);
-      result_indexs.push(index);
-    }
-  });
-  result = result.concat(last_category);
-  result_indexs = result_indexs.concat(last_category_indexs);
+  if(page == "home"){
+    var temp = jsonDataArray.slice();
+    var last_category = [];
+    var last_category_indexs = [];
+    temp.forEach((jsonData, index) => {
+      if(jsonData.種類 == '概念/3D'){
+        last_category.push(jsonData);
+        last_category_indexs.push(index);
+      }
+      else{
+        result.push(jsonData);
+        result_indexs.push(index);
+      }
+    });
+    result = result.concat(last_category);
+    result_indexs = result_indexs.concat(last_category_indexs);
+  }
+  else{
+    var sortOrder = ['住宅空間', '商業空間', '概念/3D', '專案工程'];
 
+    // 按指定顺序排序
+    var sortedArray = jsonDataArray.sort((a, b) => {
+      return sortOrder.indexOf(a.種類) - sortOrder.indexOf(b.種類);
+    });
+
+    // 反转排序后的数组
+    var temp = sortedArray.slice();
+
+    // 移除现有的项目并重新构建内容
+    var container = document.querySelector('.portfolio-container');
+    var items = container.querySelectorAll('.col-md-4.portfolio-item');
+    items.forEach(function(item) {
+      item.remove();
+    });
+    result = temp;
+    result_indexs = temp.map((item, index) => jsonDataArray.indexOf(item));
+  }
   result.forEach((jsonData, index) => {
     const col = document.createElement('div');
     col.className = 'col-md-4 portfolio-item';
@@ -246,7 +267,7 @@ function build_portfolio(jsonDataArray){
 function show_N_wrok(N){
     if(N == 'all'){
       var temp = jsonDataArray.slice().reverse();
-      build_portfolio(temp);
+      build_portfolio(temp, 'portfolio');
     }
     else{
       var n = N;
@@ -278,7 +299,7 @@ function show_N_wrok(N){
       indexes.forEach(index => {
         result.push(rev_array[index]);
       });
-      build_portfolio(result.reverse());
+      build_portfolio(result.reverse(), 'home');
     } 
 }
 
@@ -432,20 +453,18 @@ function portfolio_filter(catergory){
   items.forEach(function(item) {
       item.remove();
   });
-
   // 再讓符合條件的作品顯示
   if(catergory == 'all'){
-      var temp = jsonDataArray.slice().reverse();
-      temp.forEach((jsonData, index) =>  {
-    
-      var container = document.querySelector('.portfolio-container');
-      var items = container.querySelectorAll('.col-md-4.portfolio-item');
-      items.forEach(function(item) {
-          item.remove();
-      });
-      build_portfolio(temp);
+    var temp = jsonDataArray.slice().reverse();
+    temp.forEach((jsonData, index) =>  {
+    var container = document.querySelector('.portfolio-container');
+    var items = container.querySelectorAll('.col-md-4.portfolio-item');
+    items.forEach(function(item) {
+        item.remove();
     });
-  }
+    build_portfolio(temp, 'portfolio');
+  });
+}
   else{
     var temp = jsonDataArray.slice().reverse();
     temp.forEach((jsonData, index) =>  {
