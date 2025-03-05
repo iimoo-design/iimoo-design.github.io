@@ -43,12 +43,17 @@ function build_portfolio(jsonDataArray, page){
     result_indexs = result_indexs.concat(last_category_indexs);
   }
   else{
-    var sortOrder = ['住宅空間', '商業空間', '概念/3D', '專案工程'];
+    var sortOrder = ['概念/3D', '專案工程'];
 
-    // 按指定顺序排序
-    var sortedArray = jsonDataArray.sort((a, b) => {
-      return sortOrder.indexOf(a.種類) - sortOrder.indexOf(b.種類);
-    });
+    // 分類數據
+    var residentialAndCommercial = jsonDataArray.filter(item => item.種類 === '住宅空間' || item.種類 === '商業空間');
+    var others = jsonDataArray.filter(item => item.種類 !== '住宅空間' && item.種類 !== '商業空間');
+
+    // 按指定順序排序其他類別
+    others.sort((a, b) => sortOrder.indexOf(a.種類) - sortOrder.indexOf(b.種類));
+
+    // 合併回去，確保 '住宅空間' 和 '商業空間' 保持原來順序
+    var sortedArray = [...residentialAndCommercial, ...others];
 
     // 反转排序后的数组
     var temp = sortedArray.slice();
