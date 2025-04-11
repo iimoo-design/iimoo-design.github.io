@@ -1,5 +1,5 @@
-// 從 localStorage 中取出 savedVariable 的並剖析為 JavaScript 物件
-const jsonDataArray = JSON.parse(localStorage.getItem('portfolio_description'));
+// // 從 localStorage 中取出 savedVariable 的並剖析為 JavaScript 物件
+// const jsonDataArray = JSON.parse(localStorage.getItem('portfolio_description'));
 const workflowDataArray = JSON.parse(localStorage.getItem('workflow_description'));
 
 function splitTextWithPunctuation(text) {
@@ -779,3 +779,24 @@ function disableRightClickAndCopy() {
 window.addEventListener('load', function() {
   window.scrollTo(0, 0);
 });
+
+let jsonDataArray = [];
+window.onPortfolioLoaded = function(data) {
+  console.log('custom.js 收到 portfolio 資料:', data);
+  jsonDataArray = data;
+
+  // 取得當前頁面的 URL 路徑
+  const currentPage = window.location.pathname;
+
+  console.log('當前頁面:', currentPage);
+
+  if (currentPage === '/index.html') {
+    // 在 page1.html 頁面上執行
+    onScrollToSection(show_N_wrok, 3);
+  } else if (currentPage === '/portfolio.html') {
+    // 在 page2.html 頁面上執行
+    show_N_wrok('all');
+  }
+
+  show_viewAll_button(3);  // 在兩個頁面都執行這個
+};
