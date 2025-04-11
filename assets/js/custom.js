@@ -790,7 +790,7 @@ window.onPortfolioLoaded = function(data) {
 
   console.log('當前頁面:', currentPage);
 
-  if (currentPage === '/index.html') {
+  if (currentPage === '/index.html' || currentPage === '/') {
     // 在 page1.html 頁面上執行
     onScrollToSection(show_N_wrok, 3);
   } else if (currentPage === '/portfolio.html') {
