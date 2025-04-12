@@ -1,4 +1,4 @@
-fetch('https://raw.githubusercontent.com/iimoo-design/iimoo-design.github.io/master/portfolio_description.json')
+fetch('portfolio_description.json')
   .then(response => response.json())
   .then(data => {
     window.portfolioData = data; // 存到全域變數
