@@ -828,7 +828,11 @@ window.onPortfolioLoaded = function(data) {
 
   if (currentPage === '/index.html' || currentPage === '/') {
     // 在 page1.html 頁面上執行
-    onScrollToSection(show_N_wrok, 3);
+    show_N_wrok(3);
+    // 延遲觸發動畫，確保DOM元素已經創建完成
+    setTimeout(() => {
+      triggerPortfolioAnimations();
+    }, 100);
   } else if (currentPage === '/portfolio.html') {
     // 在 page2.html 頁面上執行
     show_N_wrok('all');
