@@ -69,7 +69,10 @@ function build_portfolio(jsonDataArray, page){
   }
   result.forEach((jsonData, index) => {
     const col = document.createElement('div');
-    col.className = 'col-md-4 portfolio-item';
+    col.className = 'col-md-4 portfolio-item portfolio-animate';
+    col.style.opacity = '0';
+    col.style.transform = 'translateY(30px)';
+    col.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
 
     const link = document.createElement('a');
     link.className = 'portfolio-link';
@@ -308,6 +311,17 @@ function show_N_wrok(N){
     } 
 }
 
+// 添加滾動觸發動畫的函數
+function triggerPortfolioAnimations() {
+  const portfolioItems = document.querySelectorAll('.portfolio-item.portfolio-animate');
+  portfolioItems.forEach((item, index) => {
+    setTimeout(() => {
+      item.style.opacity = '1';
+      item.style.transform = 'translateY(0)';
+    }, index * 100);
+  });
+}
+
 //滑動到指定區域時才顯示作品
 function onScrollToSection(callback, N) {
   function isElementInViewport(el) {
@@ -324,6 +338,10 @@ function onScrollToSection(callback, N) {
     if (isElementInViewport(section)) {
       // 如果滾動到指定區塊，則執行提供的回調函數
       callback(N);
+      // 延遲觸發動畫，確保DOM元素已經創建完成
+      setTimeout(() => {
+        triggerPortfolioAnimations();
+      }, 100);
       // 一旦執行過回調函數，停止監聽滾動事件，以防止重複觸發
       window.removeEventListener('scroll', handleScroll);
     }
@@ -469,15 +487,23 @@ function portfolio_filter(catergory){
     });
     build_portfolio(temp, 'portfolio');
   });
+    // 延遲觸發動畫，確保DOM元素已經創建完成
+    setTimeout(() => {
+      triggerPortfolioAnimations();
+    }, 100);
 }
   else{
     var temp = jsonDataArray.slice().reverse();
+    var filteredItems = [];
     temp.forEach((jsonData, index) =>  {
       if(jsonData.種類 != catergory){
         return;
       }
       const col = document.createElement('div');
-      col.className = 'col-md-4 portfolio-item';
+      col.className = 'col-md-4 portfolio-item portfolio-animate';
+      col.style.opacity = '0';
+      col.style.transform = 'translateY(30px)';
+      col.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
 
       const link = document.createElement('a');
       link.className = 'portfolio-link';
@@ -521,6 +547,16 @@ function portfolio_filter(catergory){
       // 將新建的元素添加到頁面中的適當位置
       const portfolioContainer = document.querySelector('.portfolio-container'); // 假設有一個包含這些區塊的容器元素
       portfolioContainer.appendChild(col);
+      
+      filteredItems.push(col);
+    });
+    
+    // 為篩選後的項目添加動畫
+    filteredItems.forEach((item, index) => {
+      setTimeout(() => {
+        item.style.opacity = '1';
+        item.style.transform = 'translateY(0)';
+      }, index * 100);
     });
   }
 }
@@ -796,6 +832,10 @@ window.onPortfolioLoaded = function(data) {
   } else if (currentPage === '/portfolio.html') {
     // 在 page2.html 頁面上執行
     show_N_wrok('all');
+    // 延遲觸發動畫，確保DOM元素已經創建完成
+    setTimeout(() => {
+      triggerPortfolioAnimations();
+    }, 100);
   }
 
   show_viewAll_button(3);  // 在兩個頁面都執行這個
