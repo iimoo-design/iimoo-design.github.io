@@ -26,21 +26,9 @@ function build_portfolio(jsonDataArray, page){
   var result = [];
   var result_indexs = [];
   if(page == "home"){
-    var temp = jsonDataArray.slice();
-    var last_category = [];
-    var last_category_indexs = [];
-    temp.forEach((jsonData, index) => {
-      if(jsonData.種類 == '概念/3D'){
-        last_category.push(jsonData);
-        last_category_indexs.push(index);
-      }
-      else{
-        result.push(jsonData);
-        result_indexs.push(index);
-      }
-    });
-    result = result.concat(last_category);
-    result_indexs = result_indexs.concat(last_category_indexs);
+    // 首頁也按時間順序，不區分種類
+    result = jsonDataArray.slice();
+    result_indexs = jsonDataArray.map((item, index) => index);
   }
   else{
     var sortOrder = ['概念/3D', '專案工程'];
@@ -280,34 +268,17 @@ function show_N_wrok(N){
     else{
       var n = N;
       var result = [];
-      var indexes = new Set();
-      var catergory = new Set();
-      //隨機取得n個不重複的索引
-      // while (indexes.size < n) {
-      //   const randomIndex = Math.floor(Math.random() * jsonDataArray.length);
-      //   indexes.add(randomIndex);
-      // }
+      // 只按時間順序，取最新的n個作品
       var rev_array = jsonDataArray.slice().reverse();
-      for(var i = 0; i < rev_array.length; i++){
-        if(indexes.size == n){
-          break;
-        }
-        if(catergory.has(rev_array[i].種類)){
-          continue;
-        }
+      for(var i = 0; i < rev_array.length && result.length < n; i++){
         if(rev_array[i].種類 == '專案工程'){
           continue;
         }
         else{
-          indexes.add(i);
-          catergory.add(rev_array[i].種類);
+          result.push(rev_array[i]);
         }
       }
-      //將三種不同種類的作品分別放入result
-      indexes.forEach(index => {
-        result.push(rev_array[index]);
-      });
-      build_portfolio(result.reverse(), 'home');
+      build_portfolio(result, 'home');
     } 
 }
 
