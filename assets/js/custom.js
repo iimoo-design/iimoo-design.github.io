@@ -31,7 +31,7 @@ function build_portfolio(jsonDataArray, page){
     result_indexs = jsonDataArray.map((item, index) => index);
   }
   else{
-    var sortOrder = ['概念/3D', '專案工程'];
+    var sortOrder = ['概念/3D', '專案工程', '裝修工程'];
 
     // 分類數據
     var residentialAndCommercial = jsonDataArray.filter(item => item.種類 === '住宅空間' || item.種類 === '商業空間');
@@ -271,7 +271,7 @@ function show_N_wrok(N){
       // 只按時間順序，取最新的n個作品
       var rev_array = jsonDataArray.slice().reverse();
       for(var i = 0; i < rev_array.length && result.length < n; i++){
-        if(rev_array[i].種類 == '專案工程'){
+        if(rev_array[i].種類 == '專案工程' || rev_array[i].種類 == '裝修工程'){
           continue;
         }
         else{
