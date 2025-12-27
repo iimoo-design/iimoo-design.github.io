@@ -797,21 +797,21 @@ window.onPortfolioLoaded = function(data) {
 
   console.log('當前頁面:', currentPage);
 
-  if (currentPage === '/index.html' || currentPage === '/') {
-    // 在 page1.html 頁面上執行
-    show_N_wrok(3);
-    // 延遲觸發動畫，確保DOM元素已經創建完成
-    setTimeout(() => {
-      triggerPortfolioAnimations();
-    }, 100);
-  } else if (currentPage === '/portfolio.html') {
-    // 在 page2.html 頁面上執行
+  // 檢查路徑中是否包含 portfolio 關鍵字
+  if (currentPage.includes('portfolio')) {
+    console.log('偵測到作品集頁面，準備顯示全部作品');
     show_N_wrok('all');
-    // 延遲觸發動畫，確保DOM元素已經創建完成
-    setTimeout(() => {
-      triggerPortfolioAnimations();
-    }, 100);
+  } 
+  // 如果是首頁或根目錄
+  else if (currentPage.includes('index') || currentPage === '/') {
+    console.log('偵測到首頁，準備顯示 3 件作品');
+    show_N_wrok(3);
   }
+
+  // 延遲觸發動畫，確保 DOM 已生成
+  setTimeout(() => {
+    triggerPortfolioAnimations();
+  }, 200);
 
   show_viewAll_button(3);  // 在兩個頁面都執行這個
 };
