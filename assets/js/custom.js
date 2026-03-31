@@ -799,12 +799,10 @@ window.onPortfolioLoaded = function(data) {
 
   // 檢查路徑中是否包含 portfolio 關鍵字
   if (currentPage.includes('portfolio')) {
-    console.log('偵測到作品集頁面，準備顯示全部作品');
     show_N_wrok('all');
   } 
   // 如果是首頁或根目錄
   else if (currentPage.includes('index') || currentPage === '/') {
-    console.log('偵測到首頁，準備顯示 3 件作品');
     show_N_wrok(3);
   }
 
